@@ -106,7 +106,7 @@ const osThreadAttr_t GUI_Task_attributes = {
 osThreadId_t joystickTaskHandle;
 const osThreadAttr_t joystickTask_attributes = {
   .name = "joystickTask",
-  .stack_size = 256 * 4,
+  .stack_size = 128 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* USER CODE BEGIN PV */
@@ -221,7 +221,7 @@ int main(void)
   /* USER CODE BEGIN RTOS_MUTEX */
   /* add mutexes, ... */
   /* USER CODE END RTOS_MUTEX */
-  joystickQueueHandle = osMessageQueueNew(10, sizeof(JoystickCommand_t), &joystickQueue_attributes);
+  joystickQueueHandle = osMessageQueueNew(32, sizeof(JoystickCommand_t), &joystickQueue_attributes);
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */

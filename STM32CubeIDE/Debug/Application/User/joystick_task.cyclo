@@ -1,1 +1,2 @@
-../Application/User/joystick_task.cpp:31:17:void JoystickTask(void*)	13
+../Application/User/joystick_task.cpp:65:29:JoystickTask(void*)::<lambda(uint8_t, uint8_t, JoystickCommand_t, JoystickCommand_t)>	5
+../Application/User/joystick_task.cpp:32:17:void JoystickTask(void*)	11

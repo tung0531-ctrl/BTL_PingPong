@@ -22,6 +22,7 @@ extern osMessageQueueId_t joystickQueueHandle; // Handle hàng đợi FreeRTOS
 
 #define JOY_THRESHOLD_LEFT   1000     // Ngưỡng cho chuyển động trái
 #define JOY_THRESHOLD_RIGHT  3000     // Ngưỡng cho chuyển động phải
+#define JOY_REPEAT_MS        40U      // Giới hạn tốc độ gửi lệnh để tránh đầy queue
 
 
 //uint32_t tick_counter = 0;            // Biến đếm thời gian
@@ -55,58 +56,60 @@ extern "C" void JoystickTask(void *argument)
     // Biến lệnh joystick
     JoystickCommand_t command;
 
+    uint8_t lastAxisState[4] = {0, 0, 0, 0};
+    uint32_t lastAxisTick[4] = {0, 0, 0, 0};
+
     // Theo dõi trạng thái nút USER (board có pull-down cứng, nhả = RESET, nhấn = SET)
     GPIO_PinState lastButtonState = GPIO_PIN_RESET;
 
-    for (;;) {
+    auto queueAxisCommand = [&](uint8_t axisIndex, uint8_t state, JoystickCommand_t negativeCommand, JoystickCommand_t positiveCommand) {
+        uint32_t now = osKernelGetTickCount();
+
+        if (state == 0) {
+            lastAxisState[axisIndex] = 0;
+            return;
+        }
+
+        if (lastAxisState[axisIndex] != state || (now - lastAxisTick[axisIndex]) >= JOY_REPEAT_MS) {
+            command = (state == 1) ? negativeCommand : positiveCommand;
+            if (osMessageQueuePut(joystickQueueHandle, &command, 0, 0) == osOK) {
+                lastAxisState[axisIndex] = state;
+                lastAxisTick[axisIndex] = now;
+            }
+        }
+    };
+
+  for (;;) {
         // Bắt đầu quét tất cả các kênh
         HAL_ADC_Start(&hadc1);
 
-        // Đọc lần lượt giá trị từ 4 kênh
+        // Đọc lần lượt giá trị từ 4 kênh, có timeout để tránh treo vĩnh viễn
+        HAL_StatusTypeDef adc_ok = HAL_OK;
         for (int i = 0; i < 4; i++) {
-            HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY);//polling giá trị adc
+            if (HAL_ADC_PollForConversion(&hadc1, 50) != HAL_OK) {
+                adc_ok = HAL_ERROR;
+                break;
+            }
             adc_values[i] = HAL_ADC_GetValue(&hadc1);
         }
         HAL_ADC_Stop(&hadc1);
 
-        // Xử lý Joystick 1
-        // Trục X
-        if (adc_values[1] < JOY_THRESHOLD_LEFT) {
-            command = JOY1_LEFT;
-            osMessageQueuePut(joystickQueueHandle, &command, 0, 0);//lưu vào hàng đợi command
-        } else if (adc_values[1] > JOY_THRESHOLD_RIGHT) {
-            command = JOY1_RIGHT;
-            osMessageQueuePut(joystickQueueHandle, &command, 0, 0);
+        // Nếu ADC bị lỗi/timeout, xóa cờ lỗi và bỏ qua vòng này
+        if (adc_ok != HAL_OK) {
+            __HAL_ADC_CLEAR_FLAG(&hadc1, ADC_FLAG_OVR);
+            osDelay(10);
+            continue;
         }
 
-        // Trục Y
-        if (adc_values[0] < JOY_THRESHOLD_LEFT) {
-            command = JOY1_UP;
-            osMessageQueuePut(joystickQueueHandle, &command, 0, 0);
-        }else if (adc_values[0] > JOY_THRESHOLD_RIGHT) {
-			command = JOY1_DOWN;
-			osMessageQueuePut(joystickQueueHandle, &command, 0, 0);
-		}
+        uint8_t joy1XAxisState = (adc_values[1] < JOY_THRESHOLD_LEFT) ? 1 : ((adc_values[1] > JOY_THRESHOLD_RIGHT) ? 2 : 0);
+        uint8_t joy1YAxisState = (adc_values[0] < JOY_THRESHOLD_LEFT) ? 1 : ((adc_values[0] > JOY_THRESHOLD_RIGHT) ? 2 : 0);
+        uint8_t joy2XAxisState = (adc_values[3] < JOY_THRESHOLD_LEFT) ? 1 : ((adc_values[3] > JOY_THRESHOLD_RIGHT) ? 2 : 0);
+        uint8_t joy2YAxisState = (adc_values[2] < JOY_THRESHOLD_LEFT) ? 1 : ((adc_values[2] > JOY_THRESHOLD_RIGHT) ? 2 : 0);
 
-        // Xử lý Joystick 2
-        // Trục X
-        if (adc_values[3] < JOY_THRESHOLD_LEFT) {
-            command = JOY2_LEFT;
-            osMessageQueuePut(joystickQueueHandle, &command, 0, 0);
-        } else if (adc_values[3] > JOY_THRESHOLD_RIGHT) {
-            command = JOY2_RIGHT;
-            osMessageQueuePut(joystickQueueHandle, &command, 0, 0);
-        }
-
-        // Trục Y
-        if (adc_values[2] < JOY_THRESHOLD_LEFT) {
-            command = JOY2_UP;
-            osMessageQueuePut(joystickQueueHandle, &command, 0, 0);
-        }
-        else if (adc_values[2] > JOY_THRESHOLD_RIGHT) {
-		   command = JOY2_DOWN;
-		   osMessageQueuePut(joystickQueueHandle, &command, 0, 0);
-	   }
+        queueAxisCommand(0, joy1XAxisState, JOY1_LEFT, JOY1_RIGHT);
+        queueAxisCommand(1, joy1YAxisState, JOY1_UP, JOY1_DOWN);
+        queueAxisCommand(2, joy2XAxisState, JOY2_LEFT, JOY2_RIGHT);
+        queueAxisCommand(3, joy2YAxisState, JOY2_UP, JOY2_DOWN);
         // Nút USER dùng chung cho cả 2 người chơi: gửi cả 2 lệnh,
         // màn hình nào đang ở trạng thái chờ serve (waitingForServe && servingPlayer đúng)
         // sẽ tự nhận đúng lệnh của mình, lệnh còn lại bị bỏ qua vô hại.
