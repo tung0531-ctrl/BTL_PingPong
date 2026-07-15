@@ -6,6 +6,51 @@
 
 extern osMessageQueueId_t joystickQueueHandle;
 
+namespace
+{
+float clampImpact(float value)
+{
+    if (value < -1.0f)
+    {
+        return -1.0f;
+    }
+    if (value > 1.0f)
+    {
+        return 1.0f;
+    }
+    return value;
+}
+
+void applyPaddleBounce(float& ballX, float& ballY, float& ballVelX, float& ballVelY, int ballWidth, int ballHeight,
+                       const touchgfx::Box& paddle, bool bounceRight)
+{
+    const float speed = sqrtf(ballVelX * ballVelX + ballVelY * ballVelY);
+    const float paddleCenterY = paddle.getY() + paddle.getHeight() * 0.5f;
+    const float ballCenterY = ballY + ballHeight * 0.5f;
+    const float halfPaddleHeight = paddle.getHeight() * 0.5f;
+    float impact = 0.0f;
+
+    if (halfPaddleHeight > 0.0f)
+    {
+        impact = clampImpact((ballCenterY - paddleCenterY) / halfPaddleHeight);
+    }
+
+    const float maxVerticalSpeed = speed * 0.85f;
+    ballVelY = impact * maxVerticalSpeed;
+
+    float horizontalSpeed = sqrtf(speed * speed - ballVelY * ballVelY);
+    if (horizontalSpeed < 0.5f)
+    {
+        horizontalSpeed = 0.5f;
+        const float remainingVertical = speed * speed - horizontalSpeed * horizontalSpeed;
+        ballVelY = (ballVelY >= 0.0f ? 1.0f : -1.0f) * sqrtf(remainingVertical > 0.0f ? remainingVertical : 0.0f);
+    }
+
+    ballVelX = bounceRight ? horizontalSpeed : -horizontalSpeed;
+    ballX = bounceRight ? paddle.getX() + paddle.getWidth() : paddle.getX() - ballWidth;
+}
+}
+
 MediumScreenView::MediumScreenView():ballX(160), ballY(120), ballVelX(1.4f), ballVelY(1.4f),
 								  waitingForServe(false), serveDelayTicks(0), servingPlayer(0),
 								  score1(0), score2(0),gameOver(false),buzzerBeepCounter(0), buzzerBeepState(false),
@@ -23,7 +68,30 @@ void MediumScreenView::invalidateAbsoluteArea(const touchgfx::Rect& before, cons
     if (dirty.width > 0 && dirty.height > 0)
     {
         invalidateRect(dirty);
+        refreshStaticBars(dirty);
     }
+}
+
+void MediumScreenView::refreshStaticBars(const touchgfx::Rect& dirty)
+{
+    if (dirty.intersect(goal1.getAbsoluteRect()))
+    {
+        goal1.invalidate();
+    }
+    if (dirty.intersect(goal2.getAbsoluteRect()))
+    {
+        goal2.invalidate();
+    }
+}
+
+void MediumScreenView::refreshStaticScene()
+{
+    __background.invalidate();
+    box3.invalidate();
+    box1.invalidate();
+    box2.invalidate();
+    goal1.invalidate();
+    goal2.invalidate();
 }
 
 void MediumScreenView::moveBallTo(int16_t x, int16_t y)
@@ -43,6 +111,32 @@ void MediumScreenView::updateAimLine(touchgfx::Line& line, float centerX, float 
     line.setVisible(visible);
     touchgfx::Rect after = line.getAbsoluteRect();
     invalidateAbsoluteArea(before, after);
+}
+
+void MediumScreenView::hideAimLines()
+{
+    const float ballCenterX = ballX + ball.getWidth() / 2.0f;
+    const float ballCenterY = ballY + ball.getHeight() / 2.0f;
+
+    updateAimLine(line1, ballCenterX, ballCenterY, lineAngle1, false);
+    updateAimLine(line1_1, ballCenterX, ballCenterY, lineAngle2, false);
+}
+
+void MediumScreenView::showAimLineForPlayer(int player)
+{
+    hideAimLines();
+
+    const float ballCenterX = ballX + ball.getWidth() / 2.0f;
+    const float ballCenterY = ballY + ball.getHeight() / 2.0f;
+
+    if (player == 1)
+    {
+        updateAimLine(line1, ballCenterX, ballCenterY, lineAngle1, true);
+    }
+    else if (player == 2)
+    {
+        updateAimLine(line1_1, ballCenterX, ballCenterY, lineAngle2, true);
+    }
 }
 
 void MediumScreenView::setupScreen()
@@ -69,10 +163,7 @@ void MediumScreenView::setupScreen()
     lineAngle2 = 0.0f;
 
     // Ẩn các đường ban đầu
-    line1.setVisible(false);
-    line1_1.setVisible(false);
-    line1.invalidate();
-    line1_1.invalidate();
+    hideAimLines();
 
 	ball.invalidate();
     moveBallTo(ballX, ballY);
@@ -93,15 +184,13 @@ void MediumScreenView::tearDownScreen()
 void MediumScreenView::handleTickEvent()
 {
     invalidate();
+    refreshStaticScene();
     BuzzerMusic_Update();
 
 
     if (gameOver) {
         BuzzerMusic_Stop();
-    	line1.setVisible(false);
-		line1_1.setVisible(false);
-		line1.invalidate();
-		line1_1.invalidate();
+        hideAimLines();
         return;
     }
 
@@ -167,9 +256,7 @@ void MediumScreenView::handleTickEvent()
 					desiredBallVelY1 -= 0.2f;
 					if (desiredBallVelY1 < -2.0f) desiredBallVelY1 = -2.0f;
 					lineAngle1 = atan2f(desiredBallVelY1, 2.0f) * 180.0f / M_PI;
-                    float ballCenterX = ballX + ball.getWidth() / 2.0f;
-                    float ballCenterY = ballY + ball.getHeight() / 2.0f;
-                    updateAimLine(line1, ballCenterX, ballCenterY, lineAngle1, true);
+                    showAimLineForPlayer(1);
 				}
 				break;
 
@@ -178,9 +265,7 @@ void MediumScreenView::handleTickEvent()
 					desiredBallVelY1 += 0.2f;
 					if (desiredBallVelY1 > 2.0f) desiredBallVelY1 = 2.0f;
 					lineAngle1 = atan2f(desiredBallVelY1, 2.0f) * 180.0f / M_PI;
-                    float ballCenterX = ballX + ball.getWidth() / 2.0f;
-                    float ballCenterY = ballY + ball.getHeight() / 2.0f;
-                    updateAimLine(line1, ballCenterX, ballCenterY, lineAngle1, true);
+                    showAimLineForPlayer(1);
 				}
 				break;
 
@@ -189,9 +274,7 @@ void MediumScreenView::handleTickEvent()
 					desiredBallVelY2 -= 0.2f;
 					if (desiredBallVelY2 < -2.0f) desiredBallVelY2 = -2.0f;
 					lineAngle2 = atan2f(desiredBallVelY2, -2.0f) * 180.0f / M_PI;
-                    float ballCenterX = ballX + ball.getWidth() / 2.0f;
-                    float ballCenterY = ballY + ball.getHeight() / 2.0f;
-                    updateAimLine(line1_1, ballCenterX, ballCenterY, lineAngle2, true);
+                    showAimLineForPlayer(2);
 				}
 				break;
 
@@ -200,9 +283,7 @@ void MediumScreenView::handleTickEvent()
 					desiredBallVelY2 += 0.2f;
 					if (desiredBallVelY2 > 2.0f) desiredBallVelY2 = 2.0f;
 					lineAngle2 = atan2f(desiredBallVelY2, -2.0f) * 180.0f / M_PI;
-                    float ballCenterX = ballX + ball.getWidth() / 2.0f;
-                    float ballCenterY = ballY + ball.getHeight() / 2.0f;
-                    updateAimLine(line1_1, ballCenterX, ballCenterY, lineAngle2, true);
+                    showAimLineForPlayer(2);
 				}
 				break;
 
@@ -219,8 +300,7 @@ void MediumScreenView::handleTickEvent()
                     }
                     ball.setVisible(true);
                     ball.invalidate();
-                    line1.setVisible(false);
-					updateAimLine(line1, ballX + ball.getWidth() / 2.0f, ballY + ball.getHeight() / 2.0f, lineAngle1, false);
+                    hideAimLines();
                 }
                 break;
 
@@ -237,8 +317,7 @@ void MediumScreenView::handleTickEvent()
                     }
                     ball.setVisible(true);
                     ball.invalidate();
-                    line1_1.setVisible(false);
-					updateAimLine(line1_1, ballX + ball.getWidth() / 2.0f, ballY + ball.getHeight() / 2.0f, lineAngle2, false);
+                    hideAimLines();
                 }
                 break;
         }
@@ -264,8 +343,7 @@ void MediumScreenView::handleTickEvent()
                 ballX >= paddle1.getX() &&
                 ballY + ball.getHeight() >= paddle1.getY() &&
                 ballY <= paddle1.getY() + paddle1.getHeight()) {
-                ballX = paddle1.getX() + paddle1.getWidth();
-                ballVelX = -ballVelX;
+                applyPaddleBounce(ballX, ballY, ballVelX, ballVelY, ball.getWidth(), ball.getHeight(), paddle1, true);
             }
 
             // Xử lý va chạm với paddle2 (bên phải)
@@ -273,8 +351,7 @@ void MediumScreenView::handleTickEvent()
                 ballX + ball.getWidth() <= paddle2.getX() + paddle2.getWidth() &&
                 ballY + ball.getHeight() >= paddle2.getY() &&
                 ballY <= paddle2.getY() + paddle2.getHeight()) {
-                ballX = paddle2.getX() - ball.getWidth();
-                ballVelX = -ballVelX;
+                applyPaddleBounce(ballX, ballY, ballVelX, ballVelY, ball.getWidth(), ball.getHeight(), paddle2, false);
             }
 
             // Xử lý va chạm với bên trái (ballX < 1)
@@ -299,9 +376,7 @@ void MediumScreenView::handleTickEvent()
                         desiredBallVelY1 = 0.0f;
 					    lineAngle1 = 0.0f;
 					    // Cập nhật đường dẫn với tâm bóng
-                        float ballCenterX = ballX + ball.getWidth() / 2.0f;
-                        float ballCenterY = ballY + ball.getHeight() / 2.0f;
-                        updateAimLine(line1, ballCenterX, ballCenterY, lineAngle1, true);
+                        showAimLineForPlayer(1);
                         moveBallTo(ballX, ballY);
                         ball.invalidate();
                         return; // Thoát để không xử lý thêm
@@ -334,9 +409,7 @@ void MediumScreenView::handleTickEvent()
                         desiredBallVelY2 = 0.0f;
 						lineAngle2 = 0.0f;
 						// Cập nhật đường dẫn với tâm bóng
-                        float ballCenterX = ballX + ball.getWidth() / 2.0f;
-                        float ballCenterY = ballY + ball.getHeight() / 2.0f;
-                        updateAimLine(line1_1, ballCenterX, ballCenterY, lineAngle2, true);
+                        showAimLineForPlayer(2);
                         moveBallTo(ballX, ballY);
                         ball.invalidate();
                         return; // Thoát để không xử lý thêm
@@ -365,14 +438,10 @@ void MediumScreenView::handleTickEvent()
             if (servingPlayer == 1) {
                 ballY = paddle1.getY() + paddle1.getHeight()/2 - ball.getHeight()/2;
                 // Cập nhật đường dẫn với tâm bóng
-                float ballCenterX = ballX + ball.getWidth() / 2.0f;
-                float ballCenterY = ballY + ball.getHeight() / 2.0f;
-                updateAimLine(line1, ballCenterX, ballCenterY, lineAngle1, true);
+                showAimLineForPlayer(1);
             } else if (servingPlayer == 2) {
                 ballY = paddle2.getY() + paddle2.getHeight()/2 - ball.getHeight()/2;
-                float ballCenterX = ballX + ball.getWidth() / 2.0f;
-                float ballCenterY = ballY + ball.getHeight() / 2.0f;
-                updateAimLine(line1_1, ballCenterX, ballCenterY, lineAngle2, true);
+                showAimLineForPlayer(2);
             }
             moveBallTo(ballX, ballY);
             ball.invalidate();

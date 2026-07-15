@@ -1,12 +1,18 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
-D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenView.cpp:86:6:virtual void HardScreenView::tearDownScreen()	0	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenView.cpp:197:6:virtual void HardScreenView::tearDownScreen()	0	static
 ../../TouchGFX/gui/include/gui/hardscreen_screen/HardScreenView.hpp:11:13:HardScreenView::~HardScreenView()	8	static
 ../../TouchGFX/gui/include/gui/hardscreen_screen/HardScreenView.hpp:11:13:virtual HardScreenView::~HardScreenView()	8	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenView.cpp:24:6:void {anonymous}::applyPaddleBounce(float&, float&, float&, float&, int, int, const touchgfx::Box&, bool)	48	static
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp:192:10:bool touchgfx::Rect::intersect(const touchgfx::Rect&) const	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:588:18:virtual void touchgfx::Drawable::moveTo(int16_t, int16_t)	4	static
-D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenView.cpp:9:1:HardScreenView::HardScreenView()	8	static
-D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenView.cpp:17:6:void HardScreenView::invalidateAbsoluteArea(const touchgfx::Rect&, const touchgfx::Rect&)	32	static
-D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenView.cpp:29:6:void HardScreenView::moveBallTo(int16_t, int16_t)	40	static
-D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenView.cpp:37:6:void HardScreenView::updateAimLine(touchgfx::Line&, float, float, float, bool)	56	static
-D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenView.cpp:48:6:virtual void HardScreenView::setupScreen()	24	static
-D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenView.cpp:92:6:virtual void HardScreenView::handleTickEvent()	48	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenView.cpp:54:1:HardScreenView::HardScreenView()	8	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenView.cpp:75:6:void HardScreenView::refreshStaticBars(const touchgfx::Rect&)	24	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenView.cpp:62:6:void HardScreenView::invalidateAbsoluteArea(const touchgfx::Rect&, const touchgfx::Rect&)	40	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenView.cpp:117:6:void HardScreenView::moveBallTo(int16_t, int16_t)	40	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenView.cpp:125:6:void HardScreenView::updateAimLine(touchgfx::Line&, float, float, float, bool)	56	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenView.cpp:136:6:void HardScreenView::hideAimLines()	24	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenView.cpp:145:6:void HardScreenView::showAimLineForPlayer(int)	16	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenView.cpp:103:6:void HardScreenView::refreshStaticScene()	8	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenView.cpp:162:6:virtual void HardScreenView::setupScreen()	24	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenView.cpp:203:6:virtual void HardScreenView::handleTickEvent()	64	static

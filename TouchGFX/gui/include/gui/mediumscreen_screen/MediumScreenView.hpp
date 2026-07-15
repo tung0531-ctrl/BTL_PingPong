@@ -16,6 +16,10 @@ protected:
     void moveBallTo(int16_t x, int16_t y);
     void updateAimLine(touchgfx::Line& line, float centerX, float centerY, float angleDeg, bool visible);
     void invalidateAbsoluteArea(const touchgfx::Rect& before, const touchgfx::Rect& after);
+    void hideAimLines();
+    void showAimLineForPlayer(int player);
+    void refreshStaticBars(const touchgfx::Rect& dirty);
+    void refreshStaticScene();
 
     float ballX;      // Vị trí X của bóng
 	float ballY;      // Vị trí Y của bóng

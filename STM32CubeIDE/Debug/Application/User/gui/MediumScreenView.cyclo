@@ -1,12 +1,18 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
-D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:87:6:virtual void MediumScreenView::tearDownScreen()	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:178:6:virtual void MediumScreenView::tearDownScreen()	1
 ../../TouchGFX/gui/include/gui/mediumscreen_screen/MediumScreenView.hpp:11:13:MediumScreenView::~MediumScreenView()	1
 ../../TouchGFX/gui/include/gui/mediumscreen_screen/MediumScreenView.hpp:11:13:virtual MediumScreenView::~MediumScreenView()	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:24:6:void {anonymous}::applyPaddleBounce(float&, float&, float&, float&, int, int, const touchgfx::Box&, bool)	6
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp:192:10:bool touchgfx::Rect::intersect(const touchgfx::Rect&) const	4
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:588:18:virtual void touchgfx::Drawable::moveTo(int16_t, int16_t)	1
-D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:9:1:MediumScreenView::MediumScreenView()	1
-D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:17:6:void MediumScreenView::invalidateAbsoluteArea(const touchgfx::Rect&, const touchgfx::Rect&)	11
-D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:29:6:void MediumScreenView::moveBallTo(int16_t, int16_t)	1
-D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:37:6:void MediumScreenView::updateAimLine(touchgfx::Line&, float, float, float, bool)	1
-D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:48:6:virtual void MediumScreenView::setupScreen()	1
-D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:93:6:virtual void MediumScreenView::handleTickEvent()	56
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:54:1:MediumScreenView::MediumScreenView()	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:75:6:void MediumScreenView::refreshStaticBars(const touchgfx::Rect&)	3
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:62:6:void MediumScreenView::invalidateAbsoluteArea(const touchgfx::Rect&, const touchgfx::Rect&)	8
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:97:6:void MediumScreenView::moveBallTo(int16_t, int16_t)	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:105:6:void MediumScreenView::updateAimLine(touchgfx::Line&, float, float, float, bool)	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:116:6:void MediumScreenView::hideAimLines()	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:125:6:void MediumScreenView::showAimLineForPlayer(int)	3
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:87:6:void MediumScreenView::refreshStaticScene()	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:142:6:virtual void MediumScreenView::setupScreen()	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:184:6:virtual void MediumScreenView::handleTickEvent()	56

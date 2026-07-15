@@ -10,6 +10,51 @@
 // Handle hàng đợi tin nhắn FreeRTOS cho các lệnh từ joystick
 extern osMessageQueueId_t joystickQueueHandle;
 
+namespace
+{
+float clampImpact(float value)
+{
+    if (value < -1.0f)
+    {
+        return -1.0f;
+    }
+    if (value > 1.0f)
+    {
+        return 1.0f;
+    }
+    return value;
+}
+
+void applyPaddleBounce(float& ballX, float& ballY, float& ballVelX, float& ballVelY, int ballWidth, int ballHeight,
+                       const touchgfx::Box& paddle, bool bounceRight)
+{
+    const float speed = sqrtf(ballVelX * ballVelX + ballVelY * ballVelY);
+    const float paddleCenterY = paddle.getY() + paddle.getHeight() * 0.5f;
+    const float ballCenterY = ballY + ballHeight * 0.5f;
+    const float halfPaddleHeight = paddle.getHeight() * 0.5f;
+    float impact = 0.0f;
+
+    if (halfPaddleHeight > 0.0f)
+    {
+        impact = clampImpact((ballCenterY - paddleCenterY) / halfPaddleHeight);
+    }
+
+    const float maxVerticalSpeed = speed * 0.85f;
+    ballVelY = impact * maxVerticalSpeed;
+
+    float horizontalSpeed = sqrtf(speed * speed - ballVelY * ballVelY);
+    if (horizontalSpeed < 0.5f)
+    {
+        horizontalSpeed = 0.5f;
+        const float remainingVertical = speed * speed - horizontalSpeed * horizontalSpeed;
+        ballVelY = (ballVelY >= 0.0f ? 1.0f : -1.0f) * sqrtf(remainingVertical > 0.0f ? remainingVertical : 0.0f);
+    }
+
+    ballVelX = bounceRight ? horizontalSpeed : -horizontalSpeed;
+    ballX = bounceRight ? paddle.getX() + paddle.getWidth() : paddle.getX() - ballWidth;
+}
+}
+
 // Hàm khởi tạo của lớp EasyScreenView
 EasyScreenView::EasyScreenView() : ballX(160), ballY(80), ballVelX(1.4f), ballVelY(1.4f),
                                    waitingForServe(false), serveDelayTicks(0), servingPlayer(0),
@@ -267,8 +312,7 @@ void EasyScreenView::handleTickEvent()
             ballX >= paddle1.getX() &&
             ballY + ball.getHeight() >= paddle1.getY() &&
             ballY <= paddle1.getY() + paddle1.getHeight()) {
-            ballX = paddle1.getX() + paddle1.getWidth();
-            ballVelX = -ballVelX;
+            applyPaddleBounce(ballX, ballY, ballVelX, ballVelY, ball.getWidth(), ball.getHeight(), paddle1, true);
         }
 
         // Xử lý va chạm với paddle2
@@ -276,8 +320,7 @@ void EasyScreenView::handleTickEvent()
             ballX + ball.getWidth() <= paddle2.getX() + paddle2.getWidth() &&
             ballY + ball.getHeight() >= paddle2.getY() &&
             ballY <= paddle2.getY() + paddle2.getHeight()) {
-            ballX = paddle2.getX() - ball.getWidth();
-            ballVelX = -ballVelX;
+            applyPaddleBounce(ballX, ballY, ballVelX, ballVelY, ball.getWidth(), ball.getHeight(), paddle2, false);
         }
 
         // Xử lý ghi điểm
