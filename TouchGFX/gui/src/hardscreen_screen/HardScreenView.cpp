@@ -14,6 +14,37 @@ HardScreenView::HardScreenView():ballX(160), ballY(120), ballVelX(1.6f), ballVel
 
 }
 
+void HardScreenView::invalidateAbsoluteArea(const touchgfx::Rect& before, const touchgfx::Rect& after)
+{
+    touchgfx::Rect dirty = before;
+    dirty.expandToFit(after);
+    touchgfx::Rect screenBounds(0, 0, 320, 240);
+    dirty &= screenBounds;
+    if (dirty.width > 0 && dirty.height > 0)
+    {
+        invalidateRect(dirty);
+    }
+}
+
+void HardScreenView::moveBallTo(int16_t x, int16_t y)
+{
+    touchgfx::Rect before = ball.getAbsoluteRect();
+    ball.moveTo(x, y);
+    touchgfx::Rect after = ball.getAbsoluteRect();
+    invalidateAbsoluteArea(before, after);
+}
+
+void HardScreenView::updateAimLine(touchgfx::Line& line, float centerX, float centerY, float angleDeg, bool visible)
+{
+    touchgfx::Rect before = line.getAbsoluteRect();
+    line.setPosition(centerX - 16, centerY - 16, 33, 33);
+    line.setStart(16, 16);
+    line.setEnd(16 + 30 * cosf(angleDeg * M_PI / 180.0f), 16 + 30 * sinf(angleDeg * M_PI / 180.0f));
+    line.setVisible(visible);
+    touchgfx::Rect after = line.getAbsoluteRect();
+    invalidateAbsoluteArea(before, after);
+}
+
 void HardScreenView::setupScreen()
 {
     HardScreenViewBase::setupScreen();
@@ -42,7 +73,7 @@ void HardScreenView::setupScreen()
 	line1.invalidate();
 	line1_1.invalidate();
 	ball.invalidate();
-	ball.moveTo(ballX, ballY);
+    moveBallTo(ballX, ballY);
 	ball.invalidate();
     // Khởi tạo điểm số
 	Unicode::snprintf(HardScreenViewBase::score1Buffer, HardScreenViewBase::SCORE1_SIZE, "%d", score1);
@@ -58,6 +89,8 @@ void HardScreenView::tearDownScreen()
 
 void HardScreenView::handleTickEvent()
 {
+    invalidate();
+
 
     if (gameOver) {
     	line1.setVisible(false);
@@ -140,15 +173,9 @@ void HardScreenView::handleTickEvent()
 					desiredBallVelY1 -= 0.2f;
 					if (desiredBallVelY1 < -2.0f) desiredBallVelY1 = -2.0f;
 					lineAngle1 = atan2f(desiredBallVelY1, 2.0f) * 180.0f / M_PI;
-					// Cập nhật đường dẫn với tâm bóng
-					line1.invalidate();
-										float ballCenterX = ballX + ball.getWidth() / 2.0f;
-										float ballCenterY = ballY + ball.getHeight() / 2.0f;
-										line1.setPosition(ballCenterX - 16, ballCenterY - 16, 33, 33); // Kích thước vùng bao quanh
-										line1.setStart(16, 16); // Tâm tương đối trong vùng
-										line1.setEnd(16 + 30 * cosf(lineAngle1 * M_PI / 180.0f), 16 + 30 * sinf(lineAngle1 * M_PI / 180.0f));
-										line1.setVisible(true);
-										line1.invalidate();
+                    float ballCenterX = ballX + ball.getWidth() / 2.0f;
+                    float ballCenterY = ballY + ball.getHeight() / 2.0f;
+                    updateAimLine(line1, ballCenterX, ballCenterY, lineAngle1, true);
 				}
 				break;
 
@@ -157,15 +184,9 @@ void HardScreenView::handleTickEvent()
 					desiredBallVelY1 += 0.2f;
 					if (desiredBallVelY1 > 2.0f) desiredBallVelY1 = 2.0f;
 					lineAngle1 = atan2f(desiredBallVelY1, 2.0f) * 180.0f / M_PI;
-					// Cập nhật đường dẫn với tâm bóng
-					line1.invalidate();
-										float ballCenterX = ballX + ball.getWidth() / 2.0f;
-										float ballCenterY = ballY + ball.getHeight() / 2.0f;
-										line1.setPosition(ballCenterX - 16, ballCenterY - 16, 33, 33);
-										line1.setStart(16, 16);
-										line1.setEnd(16 + 30 * cosf(lineAngle1 * M_PI / 180.0f), 16 + 30 * sinf(lineAngle1 * M_PI / 180.0f));
-										line1.setVisible(true);
-										line1.invalidate();
+                    float ballCenterX = ballX + ball.getWidth() / 2.0f;
+                    float ballCenterY = ballY + ball.getHeight() / 2.0f;
+                    updateAimLine(line1, ballCenterX, ballCenterY, lineAngle1, true);
 				}
 				break;
 
@@ -174,15 +195,9 @@ void HardScreenView::handleTickEvent()
 					desiredBallVelY2 -= 0.2f;
 					if (desiredBallVelY2 < -2.0f) desiredBallVelY2 = -2.0f;
 					lineAngle2 = atan2f(desiredBallVelY2, -2.0f) * 180.0f / M_PI;
-					// Cập nhật đường dẫn với tâm bóng
-					line1_1.invalidate();
-									   float ballCenterX = ballX + ball.getWidth() / 2.0f;
-									   float ballCenterY = ballY + ball.getHeight() / 2.0f;
-									   line1_1.setPosition(ballCenterX - 16, ballCenterY - 16, 33, 33);
-									   line1_1.setStart(16, 16);
-									   line1_1.setEnd(16 + 30 * cosf(lineAngle2 * M_PI / 180.0f), 16 + 30 * sinf(lineAngle2 * M_PI / 180.0f));
-									   line1_1.setVisible(true);
-									   line1_1.invalidate();
+                    float ballCenterX = ballX + ball.getWidth() / 2.0f;
+                    float ballCenterY = ballY + ball.getHeight() / 2.0f;
+                    updateAimLine(line1_1, ballCenterX, ballCenterY, lineAngle2, true);
 				}
 				break;
 
@@ -191,15 +206,9 @@ void HardScreenView::handleTickEvent()
 					desiredBallVelY2 += 0.2f;
 					if (desiredBallVelY2 > 2.0f) desiredBallVelY2 = 2.0f;
 					lineAngle2 = atan2f(desiredBallVelY2, -2.0f) * 180.0f / M_PI;
-					// Cập nhật đường dẫn với tâm bóng
-					line1_1.invalidate();
-										float ballCenterX = ballX + ball.getWidth() / 2.0f;
-										float ballCenterY = ballY + ball.getHeight() / 2.0f;
-										line1_1.setPosition(ballCenterX - 16, ballCenterY - 16, 33, 33);
-										line1_1.setStart(16, 16);
-										line1_1.setEnd(16 + 30 * cosf(lineAngle2 * M_PI / 180.0f), 16 + 30 * sinf(lineAngle2 * M_PI / 180.0f));
-										line1_1.setVisible(true);
-										line1_1.invalidate();
+                    float ballCenterX = ballX + ball.getWidth() / 2.0f;
+                    float ballCenterY = ballY + ball.getHeight() / 2.0f;
+                    updateAimLine(line1_1, ballCenterX, ballCenterY, lineAngle2, true);
 				}
 				break;
 
@@ -217,7 +226,7 @@ void HardScreenView::handleTickEvent()
                     ball.setVisible(true);
                     ball.invalidate();
                     line1.setVisible(false);
-                    line1.invalidate();
+					updateAimLine(line1, ballX + ball.getWidth() / 2.0f, ballY + ball.getHeight() / 2.0f, lineAngle1, false);
                 }
                 break;
 
@@ -235,7 +244,7 @@ void HardScreenView::handleTickEvent()
                     ball.setVisible(true);
                     ball.invalidate();
                     line1_1.setVisible(false);
-                    line1_1.invalidate();
+					updateAimLine(line1_1, ballX + ball.getWidth() / 2.0f, ballY + ball.getHeight() / 2.0f, lineAngle2, false);
                 }
                 break;
         }
@@ -347,30 +356,20 @@ void HardScreenView::handleTickEvent()
                            desiredBallVelY1 = 0.0f;
 							lineAngle1 = 0.0f;
 							// Cập nhật đường dẫn với tâm bóng
-							line1.invalidate();
-									   float ballCenterX = ballX + ball.getWidth() / 2.0f;
-									   float ballCenterY = ballY + ball.getHeight() / 2.0f;
-									   line1.setPosition(ballCenterX - 16, ballCenterY - 16, 33, 33);
-									   line1.setStart(16, 16);
-									   line1.setEnd(16 + 30 * cosf(lineAngle1 * M_PI / 180.0f), 16 + 30 * sinf(lineAngle1 * M_PI / 180.0f));
-									   line1.setVisible(true);
-									   line1.invalidate();
+                        float ballCenterX = ballX + ball.getWidth() / 2.0f;
+                        float ballCenterY = ballY + ball.getHeight() / 2.0f;
+                        updateAimLine(line1, ballCenterX, ballCenterY, lineAngle1, true);
                        } else {
                            ballX = paddle2.getX() - ball.getWidth() - 10; // Gần paddle2
                            ballY = paddle2.getY() + paddle2.getHeight()/2 - ball.getHeight()/2; // Căn giữa paddle
                            desiredBallVelY2 = 0.0f;
 							lineAngle2 = 0.0f;
 							// Cập nhật đường dẫn với tâm bóng
-							line1_1.invalidate();
-										float ballCenterX = ballX + ball.getWidth() / 2.0f;
-										float ballCenterY = ballY + ball.getHeight() / 2.0f;
-										line1_1.setPosition(ballCenterX - 16, ballCenterY - 16, 33, 33);
-										line1_1.setStart(16, 16);
-										line1_1.setEnd(16 + 30 * cosf(lineAngle2 * M_PI / 180.0f), 16 + 30 * sinf(lineAngle2 * M_PI / 180.0f));
-										line1_1.setVisible(true);
-										line1_1.invalidate();
+                        float ballCenterX = ballX + ball.getWidth() / 2.0f;
+                        float ballCenterY = ballY + ball.getHeight() / 2.0f;
+                        updateAimLine(line1_1, ballCenterX, ballCenterY, lineAngle2, true);
                        }
-                       ball.moveTo(ballX, ballY);
+                       moveBallTo(ballX, ballY);
                        ball.invalidate();
                        return; // Thoát để không xử lý thêm
                    }
@@ -400,15 +399,10 @@ void HardScreenView::handleTickEvent()
                         desiredBallVelY1 = 0.0f;
 						lineAngle1 = 0.0f;
 						// Cập nhật đường dẫn với tâm bóng
-						line1.invalidate();
-								   float ballCenterX = ballX + ball.getWidth() / 2.0f;
-								   float ballCenterY = ballY + ball.getHeight() / 2.0f;
-								   line1.setPosition(ballCenterX - 16, ballCenterY - 16, 33, 33);
-								   line1.setStart(16, 16);
-								   line1.setEnd(16 + 30 * cosf(lineAngle1 * M_PI / 180.0f), 16 + 30 * sinf(lineAngle1 * M_PI / 180.0f));
-								   line1.setVisible(true);
-								   line1.invalidate();
-                        ball.moveTo(ballX, ballY);
+                        float ballCenterX = ballX + ball.getWidth() / 2.0f;
+                        float ballCenterY = ballY + ball.getHeight() / 2.0f;
+                        updateAimLine(line1, ballCenterX, ballCenterY, lineAngle1, true);
+                       moveBallTo(ballX, ballY);
                         ball.invalidate();
                         return; // Thoát để không xử lý thêm
                     } else {
@@ -442,15 +436,10 @@ void HardScreenView::handleTickEvent()
                         desiredBallVelY2 = 0.0f;
 						lineAngle2 = 0.0f;
 						// Cập nhật đường dẫn với tâm bóng
-						line1_1.invalidate();
-									float ballCenterX = ballX + ball.getWidth() / 2.0f;
-									float ballCenterY = ballY + ball.getHeight() / 2.0f;
-									line1_1.setPosition(ballCenterX - 16, ballCenterY - 16, 33, 33);
-									line1_1.setStart(16, 16);
-									line1_1.setEnd(16 + 30 * cosf(lineAngle2 * M_PI / 180.0f), 16 + 30 * sinf(lineAngle2 * M_PI / 180.0f));
-									line1_1.setVisible(true);
-									line1_1.invalidate();
-                        ball.moveTo(ballX, ballY);
+                        float ballCenterX = ballX + ball.getWidth() / 2.0f;
+                        float ballCenterY = ballY + ball.getHeight() / 2.0f;
+                        updateAimLine(line1_1, ballCenterX, ballCenterY, lineAngle2, true);
+                       moveBallTo(ballX, ballY);
                         ball.invalidate();
                         return; // Thoát để không xử lý thêm
                     } else {
@@ -462,7 +451,7 @@ void HardScreenView::handleTickEvent()
 
 
             // Di chuyển bóng
-            ball.moveTo(ballX, ballY);
+            moveBallTo(ballX, ballY);
             ball.invalidate();
         } else {
             // Đếm thời gian chờ 1 giây
@@ -477,28 +466,16 @@ void HardScreenView::handleTickEvent()
             // Cập nhật vị trí bóng theo paddle
             if (servingPlayer == 1) {
                 ballY = paddle1.getY() + paddle1.getHeight()/2 - ball.getHeight()/2;
-                // Cập nhật đường dẫn với tâm bóng
-                line1.invalidate();
-                            float ballCenterX = ballX + ball.getWidth() / 2.0f;
-                            float ballCenterY = ballY + ball.getHeight() / 2.0f;
-                            line1.setPosition(ballCenterX - 16, ballCenterY - 16, 33, 33);
-                            line1.setStart(16, 16);
-                            line1.setEnd(16 + 30 * cosf(lineAngle1 * M_PI / 180.0f), 16 + 30 * sinf(lineAngle1 * M_PI / 180.0f));
-                            line1.setVisible(true);
-                            line1.invalidate();
+                float ballCenterX = ballX + ball.getWidth() / 2.0f;
+                float ballCenterY = ballY + ball.getHeight() / 2.0f;
+                updateAimLine(line1, ballCenterX, ballCenterY, lineAngle1, true);
             } else if (servingPlayer == 2) {
                 ballY = paddle2.getY() + paddle2.getHeight()/2 - ball.getHeight()/2;
-                // Cập nhật đường dẫn với tâm bóng
-                line1_1.invalidate();
-                           float ballCenterX = ballX + ball.getWidth() / 2.0f;
-                           float ballCenterY = ballY + ball.getHeight() / 2.0f;
-                           line1_1.setPosition(ballCenterX - 16, ballCenterY - 16, 33, 33);
-                           line1_1.setStart(16, 16);
-                           line1_1.setEnd(16 + 30 * cosf(lineAngle2 * M_PI / 180.0f), 16 + 30 * sinf(lineAngle2 * M_PI / 180.0f));
-                           line1_1.setVisible(true);
-                           line1_1.invalidate();
+                float ballCenterX = ballX + ball.getWidth() / 2.0f;
+                float ballCenterY = ballY + ball.getHeight() / 2.0f;
+                updateAimLine(line1_1, ballCenterX, ballCenterY, lineAngle2, true);
             }
-            ball.moveTo(ballX, ballY);
+            moveBallTo(ballX, ballY);
             ball.invalidate();
         }
 }

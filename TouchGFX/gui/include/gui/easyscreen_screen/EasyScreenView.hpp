@@ -13,6 +13,9 @@ public:
     virtual void tearDownScreen();
     void handleTickEvent();
 protected:
+    void moveBallTo(int16_t x, int16_t y);
+    void updateAimLine(touchgfx::Line& line, float centerX, float centerY, float angleDeg, bool visible);
+    void invalidateAbsoluteArea(const touchgfx::Rect& before, const touchgfx::Rect& after);
 
 
     float ballX;      // Vị trí X của bóng

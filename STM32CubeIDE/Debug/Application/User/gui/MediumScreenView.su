@@ -1,12 +1,12 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:55:6:virtual void MediumScreenView::tearDownScreen()	0	static
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:86:6:virtual void MediumScreenView::tearDownScreen()	0	static
 ../../TouchGFX/gui/include/gui/mediumscreen_screen/MediumScreenView.hpp:11:13:MediumScreenView::~MediumScreenView()	8	static
 ../../TouchGFX/gui/include/gui/mediumscreen_screen/MediumScreenView.hpp:11:13:virtual MediumScreenView::~MediumScreenView()	8	static
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	24	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:588:18:virtual void touchgfx::Drawable::moveTo(int16_t, int16_t)	4	static
 D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:9:1:MediumScreenView::MediumScreenView()	8	static
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Line.hpp:95:10:void touchgfx::Line::setStart(T, T) [with T = int]	0	static
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Line.hpp:171:10:void touchgfx::Line::setEnd(T, T) [with T = float]	0	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:17:6:virtual void MediumScreenView::setupScreen()	24	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:60:6:virtual void MediumScreenView::handleTickEvent()	64	static
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:17:6:void MediumScreenView::invalidateAbsoluteArea(const touchgfx::Rect&, const touchgfx::Rect&)	32	static
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:29:6:void MediumScreenView::moveBallTo(int16_t, int16_t)	40	static
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:37:6:void MediumScreenView::updateAimLine(touchgfx::Line&, float, float, float, bool)	56	static
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:48:6:virtual void MediumScreenView::setupScreen()	24	static
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:91:6:virtual void MediumScreenView::handleTickEvent()	40	static
