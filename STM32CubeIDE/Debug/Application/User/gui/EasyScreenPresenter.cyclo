@@ -1,0 +1,7 @@
+../../TouchGFX/gui/include/gui/easyscreen_screen/EasyScreenPresenter.hpp:30:13:EasyScreenPresenter::~EasyScreenPresenter()	1
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/easyscreen_screen/EasyScreenPresenter.cpp:16:6:virtual void EasyScreenPresenter::deactivate()	1
+../../TouchGFX/gui/include/gui/easyscreen_screen/EasyScreenPresenter.hpp:30:13:virtual EasyScreenPresenter::~EasyScreenPresenter()	1
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/easyscreen_screen/EasyScreenPresenter.cpp:11:6:virtual void EasyScreenPresenter::activate()	1
+../../TouchGFX/gui/include/gui/easyscreen_screen/EasyScreenPresenter.hpp:30:13:virtual void* EasyScreenPresenter::_ZThn4_N19EasyScreenPresenterD1Ev()	1
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/easyscreen_screen/EasyScreenPresenter.cpp:5:1:EasyScreenPresenter::EasyScreenPresenter(EasyScreenView&)	1
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/easyscreen_screen/EasyScreenPresenter.cpp:26:6:void EasyScreenPresenter::goToEndScreen(int)	1

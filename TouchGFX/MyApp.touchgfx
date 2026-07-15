@@ -1,0 +1,1925 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "StartScreen",
+        "CanvasBufferSize": 4800,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "background",
+            "Width": 320,
+            "Height": 240,
+            "Color": {
+              "Red": 173,
+              "Green": 220,
+              "Blue": 237
+            }
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonHard",
+            "X": 85,
+            "Y": 102,
+            "Width": 150,
+            "Height": 80,
+            "Pressed": "__generated\\clay_theme_images_widgets_button_regular_height_36_tiny_round_pressed.png",
+            "Released": "__generated\\clay_theme_images_widgets_button_regular_height_36_tiny_round_normal.png",
+            "TextId": "__SingleUse_EUDS",
+            "ReleasedColor": {
+              "Red": 57,
+              "Green": 80,
+              "Blue": 128
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "clay_theme\\presets\\button\\regular\\height_36\\tiny_round_normal.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonEasy",
+            "X": 1,
+            "Y": 50,
+            "Width": 150,
+            "Height": 80,
+            "Pressed": "__generated\\clay_theme_images_widgets_button_regular_height_36_tiny_round_pressed.png",
+            "Released": "__generated\\clay_theme_images_widgets_button_regular_height_36_tiny_round_normal.png",
+            "TextId": "__SingleUse_0R22",
+            "ReleasedColor": {
+              "Red": 57,
+              "Green": 80,
+              "Blue": 128
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "clay_theme\\presets\\button\\regular\\height_36\\tiny_round_normal.json"
+          },
+          {
+            "Type": "Circle",
+            "Name": "circle5_1_4",
+            "X": 207,
+            "Y": 197,
+            "Width": 29,
+            "Height": 29,
+            "Color": {
+              "Red": 212,
+              "Green": 131,
+              "Blue": 165
+            },
+            "CenterX": 15.0,
+            "CenterY": 15.0,
+            "Radius": 10.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "Circle",
+            "Name": "circle5_1_3",
+            "X": 91,
+            "Y": 197,
+            "Width": 29,
+            "Height": 29,
+            "Color": {
+              "Red": 161,
+              "Green": 164,
+              "Blue": 209
+            },
+            "CenterX": 15.0,
+            "CenterY": 15.0,
+            "Radius": 10.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "Circle",
+            "Name": "circle5_4",
+            "X": 149,
+            "Y": 197,
+            "Width": 29,
+            "Height": 29,
+            "Color": {
+              "Red": 222,
+              "Green": 180,
+              "Blue": 202
+            },
+            "CenterX": 15.0,
+            "CenterY": 15.0,
+            "Radius": 10.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "Circle",
+            "Name": "circle5_2_1",
+            "X": 236,
+            "Y": 168,
+            "Width": 29,
+            "Height": 29,
+            "Color": {
+              "Red": 134,
+              "Green": 194,
+              "Blue": 183
+            },
+            "CenterX": 15.0,
+            "CenterY": 15.0,
+            "Radius": 10.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "Circle",
+            "Name": "circle5_2",
+            "X": 117,
+            "Y": 168,
+            "Width": 29,
+            "Height": 29,
+            "Color": {
+              "Red": 235,
+              "Green": 207,
+              "Blue": 155
+            },
+            "CenterX": 15.0,
+            "CenterY": 15.0,
+            "Radius": 10.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "Circle",
+            "Name": "circle5_1_1",
+            "X": 178,
+            "Y": 168,
+            "Width": 29,
+            "Height": 29,
+            "Color": {
+              "Red": 153,
+              "Green": 199,
+              "Blue": 147
+            },
+            "CenterX": 15.0,
+            "CenterY": 15.0,
+            "Radius": 10.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "Circle",
+            "Name": "circle5_1",
+            "X": 62,
+            "Y": 168,
+            "Width": 29,
+            "Height": 29,
+            "Color": {
+              "Red": 235,
+              "Green": 145,
+              "Blue": 145
+            },
+            "CenterX": 15.0,
+            "CenterY": 15.0,
+            "Radius": 10.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "titleText",
+            "X": 89,
+            "Y": 10,
+            "Width": 159,
+            "Height": 49,
+            "TextId": "__SingleUse_YPFP",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 50,
+              "Green": 93,
+              "Blue": 143
+            },
+            "LineSpacing": 1
+          },
+          {
+            "Type": "Circle",
+            "Name": "circle1",
+            "X": -26,
+            "Y": -30,
+            "Width": 80,
+            "Height": 80,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "CenterX": 40.0,
+            "CenterY": 40.0,
+            "Radius": 40.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "Circle",
+            "Name": "circle2",
+            "X": 270,
+            "Y": -30,
+            "Width": 80,
+            "Height": 80,
+            "Color": {
+              "Red": 136,
+              "Green": 202,
+              "Blue": 235
+            },
+            "CenterX": 40.0,
+            "CenterY": 40.0,
+            "Radius": 40.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "Circle",
+            "Name": "circle3",
+            "X": -26,
+            "Y": 189,
+            "Width": 80,
+            "Height": 80,
+            "Color": {
+              "Red": 136,
+              "Green": 202,
+              "Blue": 235
+            },
+            "CenterX": 40.0,
+            "CenterY": 40.0,
+            "Radius": 40.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "Circle",
+            "Name": "circle4",
+            "X": 270,
+            "Y": 189,
+            "Width": 80,
+            "Height": 80,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "CenterX": 40.0,
+            "CenterY": 40.0,
+            "Radius": 40.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonMedium",
+            "X": 170,
+            "Y": 50,
+            "Width": 150,
+            "Height": 80,
+            "Pressed": "__generated\\clay_theme_images_widgets_button_regular_height_36_tiny_round_pressed.png",
+            "Released": "__generated\\clay_theme_images_widgets_button_regular_height_36_tiny_round_normal.png",
+            "TextId": "__SingleUse_AHDE",
+            "ReleasedColor": {
+              "Red": 57,
+              "Green": 80,
+              "Blue": 128
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "clay_theme\\presets\\button\\regular\\height_36\\tiny_round_normal.json"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonEasy"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "EasyReadyScreen"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonMedium"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "MediumReadyScreen"
+            }
+          },
+          {
+            "InteractionName": "Interaction3",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonHard"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "HardReadyScreen"
+            }
+          }
+        ],
+        "CustomActions": [
+          {
+            "Name": "action1"
+          }
+        ]
+      },
+      {
+        "Name": "HardScreen",
+        "CanvasBufferSize": 4800,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box3",
+            "Width": 320,
+            "Height": 240,
+            "LockPosition": true,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "X": 2,
+            "Y": 2,
+            "Width": 316,
+            "Height": 236,
+            "LockPosition": true,
+            "Color": {
+              "Red": 12,
+              "Green": 56,
+              "Blue": 55
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box2",
+            "X": 160,
+            "Width": 3,
+            "Height": 240,
+            "LockPosition": true,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 220
+          },
+          {
+            "Type": "Box",
+            "Name": "paddle1",
+            "X": 7,
+            "Y": 110,
+            "Width": 5,
+            "Height": 20,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Draggable": true
+          },
+          {
+            "Type": "Box",
+            "Name": "paddle2",
+            "X": 308,
+            "Y": 110,
+            "Width": 5,
+            "Height": 20,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Draggable": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "score2",
+            "X": 184,
+            "Y": 22,
+            "Width": 23,
+            "Height": 22,
+            "TextId": "__SingleUse_UN9H",
+            "TextRotation": "270",
+            "Color": {
+              "Red": 89,
+              "Green": 86,
+              "Blue": 86
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "score2Buffer3",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "score1",
+            "X": 117,
+            "Y": 195,
+            "Width": 23,
+            "Height": 22,
+            "TextId": "__SingleUse_OTAD",
+            "TextRotation": "90",
+            "Color": {
+              "Red": 89,
+              "Green": 86,
+              "Blue": 86
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "score1Buffer3",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "player1",
+            "X": 140,
+            "Y": 180,
+            "Width": 19,
+            "Height": 52,
+            "TextId": "__SingleUse_Z3TY",
+            "TextRotation": "90",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 190
+          },
+          {
+            "Type": "TextArea",
+            "Name": "player2",
+            "X": 165,
+            "Y": 7,
+            "Width": 19,
+            "Height": 52,
+            "TextId": "__SingleUse_FY8E",
+            "TextRotation": "270",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 190
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "goal1",
+            "Y": 60,
+            "Width": 2,
+            "Height": 120,
+            "Color": {
+              "Green": 11,
+              "Blue": 110
+            },
+            "BorderColor": {
+              "Red": 173,
+              "Green": 147,
+              "Blue": 52
+            }
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "goal2",
+            "X": 318,
+            "Y": 60,
+            "Width": 2,
+            "Height": 120,
+            "Color": {
+              "Green": 11,
+              "Blue": 110
+            },
+            "BorderColor": {
+              "Red": 173,
+              "Green": 147,
+              "Blue": 52
+            }
+          },
+          {
+            "Type": "Circle",
+            "Name": "ball",
+            "X": 154,
+            "Y": 114,
+            "Width": 14,
+            "Height": 14,
+            "Color": {
+              "Red": 153,
+              "Green": 12,
+              "Blue": 12
+            },
+            "CenterX": 7.5,
+            "CenterY": 7.5,
+            "Radius": 6.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Triangle"
+          },
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "X": -3,
+            "Y": 10,
+            "Width": 10,
+            "Height": 38,
+            "RelativeFilename": "Untitled5.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image1_1",
+            "X": -3,
+            "Y": 189,
+            "Width": 10,
+            "Height": 38,
+            "RelativeFilename": "Untitled5.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image2",
+            "X": 313,
+            "Y": 10,
+            "Width": 10,
+            "Height": 38,
+            "RelativeFilename": "Untitled6.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image2_2",
+            "X": 313,
+            "Y": 189,
+            "Width": 10,
+            "Height": 38,
+            "RelativeFilename": "Untitled6.png"
+          },
+          {
+            "Type": "Line",
+            "Name": "line1",
+            "X": 13,
+            "Y": 114,
+            "Width": 33,
+            "Height": 19,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 95,
+            "StartX": 5.0,
+            "StartY": 5.0,
+            "EndX": 95.0,
+            "EndY": 45.0,
+            "LineWidth": 1.0,
+            "LineEndingStyle": "Butt"
+          },
+          {
+            "Type": "Line",
+            "Name": "line1_1",
+            "X": 269,
+            "Y": 110,
+            "Width": 33,
+            "Height": 19,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 95,
+            "StartX": 5.0,
+            "StartY": 5.0,
+            "EndX": 95.0,
+            "EndY": 45.0,
+            "LineWidth": 1.0,
+            "LineEndingStyle": "Butt"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "EndScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "HardReadyScreen",
+        "CanvasBufferSize": 4800,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box3",
+            "Width": 320,
+            "Height": 240,
+            "LockPosition": true,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "X": 2,
+            "Y": 2,
+            "Width": 316,
+            "Height": 236,
+            "LockPosition": true,
+            "Color": {
+              "Red": 12,
+              "Green": 56,
+              "Blue": 55
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box2",
+            "X": 160,
+            "Width": 3,
+            "Height": 240,
+            "LockPosition": true,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 220
+          },
+          {
+            "Type": "Circle",
+            "Name": "ball",
+            "X": 154,
+            "Y": 114,
+            "Width": 14,
+            "Height": 14,
+            "LockPosition": true,
+            "Color": {
+              "Red": 153,
+              "Green": 12,
+              "Blue": 12
+            },
+            "CenterX": 7.5,
+            "CenterY": 7.5,
+            "Radius": 6.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Triangle"
+          },
+          {
+            "Type": "Box",
+            "Name": "paddle1",
+            "X": 7,
+            "Y": 110,
+            "Width": 5,
+            "Height": 20,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Draggable": true
+          },
+          {
+            "Type": "Box",
+            "Name": "paddle2",
+            "X": 308,
+            "Y": 110,
+            "Width": 5,
+            "Height": 20,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Draggable": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "player1",
+            "X": 94,
+            "Y": 94,
+            "Width": 19,
+            "Height": 52,
+            "TextId": "__SingleUse_7S3Y",
+            "TextRotation": "90",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 190
+          },
+          {
+            "Type": "TextArea",
+            "Name": "player2",
+            "X": 204,
+            "Y": 93,
+            "Width": 19,
+            "Height": 52,
+            "TextId": "__SingleUse_SJ6Y",
+            "TextRotation": "270",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 190
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "goal1",
+            "Y": 61,
+            "Width": 2,
+            "Height": 120,
+            "Color": {
+              "Green": 11,
+              "Blue": 110
+            },
+            "BorderColor": {
+              "Red": 173,
+              "Green": 147,
+              "Blue": 52
+            }
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "goal2",
+            "X": 318,
+            "Y": 60,
+            "Width": 2,
+            "Height": 120,
+            "Color": {
+              "Green": 11,
+              "Blue": 110
+            },
+            "BorderColor": {
+              "Red": 173,
+              "Green": 147,
+              "Blue": 52
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "counter1",
+            "X": 46,
+            "Y": 111,
+            "Width": 29,
+            "Height": 17,
+            "TextId": "__SingleUse_7Q96",
+            "TextRotation": "90",
+            "Color": {
+              "Red": 222,
+              "Green": 171,
+              "Blue": 95
+            },
+            "Alpha": 210,
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "counter3Buffer",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "counter2",
+            "X": 245,
+            "Y": 111,
+            "Width": 29,
+            "Height": 17,
+            "TextId": "__SingleUse_WFLF",
+            "TextRotation": "270",
+            "Color": {
+              "Red": 222,
+              "Green": 171,
+              "Blue": 95
+            },
+            "Alpha": 210,
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "counter3Buffer",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "X": 313,
+            "Y": 10,
+            "Width": 10,
+            "Height": 38,
+            "RelativeFilename": "Untitled6.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image1_1",
+            "X": 313,
+            "Y": 190,
+            "Width": 10,
+            "Height": 38,
+            "RelativeFilename": "Untitled6.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image2",
+            "X": -2,
+            "Y": 10,
+            "Width": 10,
+            "Height": 38,
+            "RelativeFilename": "Untitled5.png"
+          },
+          {
+            "Type": "Image",
+            "Name": "image2_2",
+            "X": -2,
+            "Y": 190,
+            "Width": 10,
+            "Height": 38,
+            "RelativeFilename": "Untitled5.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 180
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "HardScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "MediumScreen",
+        "CanvasBufferSize": 4800,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box3",
+            "Width": 320,
+            "Height": 240,
+            "LockPosition": true,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "X": 2,
+            "Y": 2,
+            "Width": 316,
+            "Height": 236,
+            "LockPosition": true,
+            "Color": {
+              "Red": 12,
+              "Green": 56,
+              "Blue": 55
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box2",
+            "X": 160,
+            "Width": 3,
+            "Height": 240,
+            "LockPosition": true,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 220
+          },
+          {
+            "Type": "Box",
+            "Name": "paddle1",
+            "X": 7,
+            "Y": 101,
+            "Width": 5,
+            "Height": 40,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Draggable": true
+          },
+          {
+            "Type": "Box",
+            "Name": "paddle2",
+            "X": 308,
+            "Y": 101,
+            "Width": 5,
+            "Height": 40,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Draggable": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "score2",
+            "X": 184,
+            "Y": 22,
+            "Width": 23,
+            "Height": 22,
+            "TextId": "__SingleUse_KK9M",
+            "TextRotation": "270",
+            "Color": {
+              "Red": 89,
+              "Green": 86,
+              "Blue": 86
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "score2Buffer2",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "score1",
+            "X": 117,
+            "Y": 195,
+            "Width": 23,
+            "Height": 22,
+            "TextId": "__SingleUse_ATHF",
+            "TextRotation": "90",
+            "Color": {
+              "Red": 89,
+              "Green": 86,
+              "Blue": 86
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "score1Buffer2",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "player1",
+            "X": 140,
+            "Y": 180,
+            "Width": 19,
+            "Height": 52,
+            "TextId": "__SingleUse_V9P9",
+            "TextRotation": "90",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 190
+          },
+          {
+            "Type": "TextArea",
+            "Name": "player2",
+            "X": 165,
+            "Y": 7,
+            "Width": 19,
+            "Height": 52,
+            "TextId": "__SingleUse_UJJ8",
+            "TextRotation": "270",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 190
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "goal2",
+            "X": 318,
+            "Y": 60,
+            "Width": 2,
+            "Height": 120,
+            "Color": {
+              "Green": 11,
+              "Blue": 110
+            },
+            "BorderColor": {
+              "Red": 173,
+              "Green": 147,
+              "Blue": 52
+            }
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "goal1",
+            "Y": 60,
+            "Width": 2,
+            "Height": 120,
+            "Color": {
+              "Green": 11,
+              "Blue": 110
+            },
+            "BorderColor": {
+              "Red": 59,
+              "Green": 47,
+              "Blue": 5
+            }
+          },
+          {
+            "Type": "Circle",
+            "Name": "ball",
+            "X": 154,
+            "Y": 114,
+            "Width": 14,
+            "Height": 14,
+            "LockPosition": true,
+            "Color": {
+              "Red": 153,
+              "Green": 12,
+              "Blue": 12
+            },
+            "CenterX": 7.5,
+            "CenterY": 7.5,
+            "Radius": 6.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Triangle"
+          },
+          {
+            "Type": "Line",
+            "Name": "line1",
+            "X": 13,
+            "Y": 114,
+            "Width": 33,
+            "Height": 19,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 95,
+            "StartX": 5.0,
+            "StartY": 5.0,
+            "EndX": 95.0,
+            "EndY": 45.0,
+            "LineWidth": 1.0,
+            "LineEndingStyle": "Butt"
+          },
+          {
+            "Type": "Line",
+            "Name": "line1_1",
+            "X": 268,
+            "Y": 114,
+            "Width": 33,
+            "Height": 19,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 95,
+            "StartX": 5.0,
+            "StartY": 5.0,
+            "EndX": 95.0,
+            "EndY": 45.0,
+            "LineWidth": 1.0,
+            "LineEndingStyle": "Butt"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "EndScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "MediumReadyScreen",
+        "CanvasBufferSize": 4800,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box3",
+            "Width": 320,
+            "Height": 240,
+            "LockPosition": true,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "X": 2,
+            "Y": 2,
+            "Width": 318,
+            "Height": 236,
+            "LockPosition": true,
+            "Color": {
+              "Red": 12,
+              "Green": 56,
+              "Blue": 55
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box2",
+            "X": 160,
+            "Width": 3,
+            "Height": 240,
+            "LockPosition": true,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 220
+          },
+          {
+            "Type": "Circle",
+            "Name": "ball",
+            "X": 155,
+            "Y": 114,
+            "Width": 14,
+            "Height": 14,
+            "LockPosition": true,
+            "Color": {
+              "Red": 153,
+              "Green": 12,
+              "Blue": 12
+            },
+            "CenterX": 7.5,
+            "CenterY": 7.5,
+            "Radius": 6.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Triangle"
+          },
+          {
+            "Type": "Box",
+            "Name": "paddle1",
+            "X": 10,
+            "Y": 100,
+            "Width": 5,
+            "Height": 40,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Draggable": true
+          },
+          {
+            "Type": "Box",
+            "Name": "paddle2",
+            "X": 307,
+            "Y": 100,
+            "Width": 5,
+            "Height": 40,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Draggable": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "player1",
+            "X": 116,
+            "Y": 95,
+            "Width": 19,
+            "Height": 52,
+            "TextId": "__SingleUse_VDK7",
+            "TextRotation": "90",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 190,
+            "WideTextAction": 3
+          },
+          {
+            "Type": "TextArea",
+            "Name": "player2",
+            "X": 187,
+            "Y": 95,
+            "Width": 19,
+            "Height": 52,
+            "TextId": "__SingleUse_CWXV",
+            "TextRotation": "270",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 190,
+            "WideTextAction": 3
+          },
+          {
+            "Type": "TextArea",
+            "Name": "counter1",
+            "X": 53,
+            "Y": 113,
+            "Width": 29,
+            "Height": 17,
+            "TextId": "__SingleUse_MH9F",
+            "TextRotation": "90",
+            "Color": {
+              "Red": 222,
+              "Green": 171,
+              "Blue": 95
+            },
+            "Alpha": 210,
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "counter2Buffer",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "goal1",
+            "X": 318,
+            "Y": 60,
+            "Width": 2,
+            "Height": 120,
+            "Color": {
+              "Green": 11,
+              "Blue": 110
+            },
+            "BorderColor": {
+              "Red": 173,
+              "Green": 147,
+              "Blue": 52
+            }
+          },
+          {
+            "Type": "BoxWithBorder",
+            "Name": "goal2",
+            "Y": 60,
+            "Width": 2,
+            "Height": 120,
+            "Color": {
+              "Green": 11,
+              "Blue": 110
+            },
+            "BorderColor": {
+              "Red": 173,
+              "Green": 147,
+              "Blue": 52
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "counter2",
+            "X": 243,
+            "Y": 111,
+            "Width": 29,
+            "Height": 17,
+            "TextId": "__SingleUse_CZR5",
+            "TextRotation": "270",
+            "Color": {
+              "Red": 222,
+              "Green": 171,
+              "Blue": 95
+            },
+            "Alpha": 210,
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "counter2Buffer",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 180
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "MediumScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "EasyScreen",
+        "CanvasBufferSize": 4800,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box3",
+            "Width": 320,
+            "Height": 240,
+            "LockPosition": true,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "X": 2,
+            "Y": 2,
+            "Width": 316,
+            "Height": 236,
+            "LockPosition": true,
+            "Color": {
+              "Red": 12,
+              "Green": 56,
+              "Blue": 55
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box2",
+            "X": 160,
+            "Width": 3,
+            "Height": 240,
+            "LockPosition": true,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 220
+          },
+          {
+            "Type": "Box",
+            "Name": "paddle1",
+            "X": 8,
+            "Y": 100,
+            "Width": 5,
+            "Height": 40,
+            "LockPosition": true,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Draggable": true
+          },
+          {
+            "Type": "Box",
+            "Name": "paddle2",
+            "X": 307,
+            "Y": 100,
+            "Width": 5,
+            "Height": 40,
+            "LockPosition": true,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Draggable": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "score2",
+            "X": 184,
+            "Y": 22,
+            "Width": 23,
+            "Height": 22,
+            "TextId": "__SingleUse_I1JY",
+            "TextRotation": "270",
+            "Color": {
+              "Red": 89,
+              "Green": 86,
+              "Blue": 86
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "score2Buffer1",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "score1",
+            "X": 117,
+            "Y": 195,
+            "Width": 23,
+            "Height": 22,
+            "TextId": "__SingleUse_NJHY",
+            "TextRotation": "90",
+            "Color": {
+              "Red": 89,
+              "Green": 86,
+              "Blue": 86
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "score1Buffer1",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "player1",
+            "X": 140,
+            "Y": 180,
+            "Width": 19,
+            "Height": 52,
+            "TextId": "__SingleUse_G2S8",
+            "TextRotation": "90",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 190
+          },
+          {
+            "Type": "TextArea",
+            "Name": "player2",
+            "X": 165,
+            "Y": 7,
+            "Width": 19,
+            "Height": 52,
+            "TextId": "__SingleUse_OD39",
+            "TextRotation": "270",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 190
+          },
+          {
+            "Type": "Circle",
+            "Name": "ball",
+            "X": 154,
+            "Y": 114,
+            "Width": 14,
+            "Height": 14,
+            "LockPosition": true,
+            "Color": {
+              "Red": 153,
+              "Green": 12,
+              "Blue": 12
+            },
+            "CenterX": 7.5,
+            "CenterY": 7.5,
+            "Radius": 6.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Triangle"
+          },
+          {
+            "Type": "Line",
+            "Name": "line1",
+            "X": 13,
+            "Y": 114,
+            "Width": 33,
+            "Height": 19,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 95,
+            "StartX": 5.0,
+            "StartY": 5.0,
+            "EndX": 95.0,
+            "EndY": 45.0,
+            "LineWidth": 1.0,
+            "LineEndingStyle": "Butt"
+          },
+          {
+            "Type": "Line",
+            "Name": "line1_1",
+            "X": 268,
+            "Y": 114,
+            "Width": 33,
+            "Height": 19,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 95,
+            "StartX": 5.0,
+            "StartY": 5.0,
+            "EndX": 95.0,
+            "EndY": 45.0,
+            "LineWidth": 1.0,
+            "LineEndingStyle": "Butt"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerNone"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "EndScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "EasyReadyScreen",
+        "CanvasBufferSize": 4800,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box3",
+            "Width": 320,
+            "Height": 240,
+            "LockPosition": true,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "X": 2,
+            "Y": 2,
+            "Width": 318,
+            "Height": 236,
+            "LockPosition": true,
+            "Color": {
+              "Red": 12,
+              "Green": 56,
+              "Blue": 55
+            }
+          },
+          {
+            "Type": "Box",
+            "Name": "box2",
+            "X": 160,
+            "Width": 3,
+            "Height": 240,
+            "LockPosition": true,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 220
+          },
+          {
+            "Type": "Circle",
+            "Name": "ball",
+            "X": 155,
+            "Y": 114,
+            "Width": 14,
+            "Height": 14,
+            "LockPosition": true,
+            "Color": {
+              "Red": 153,
+              "Green": 12,
+              "Blue": 12
+            },
+            "CenterX": 7.5,
+            "CenterY": 7.5,
+            "Radius": 6.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Triangle"
+          },
+          {
+            "Type": "Box",
+            "Name": "paddle1",
+            "X": 8,
+            "Y": 100,
+            "Width": 5,
+            "Height": 40,
+            "LockPosition": true,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Draggable": true
+          },
+          {
+            "Type": "Box",
+            "Name": "paddle2",
+            "X": 308,
+            "Y": 100,
+            "Width": 5,
+            "Height": 40,
+            "LockPosition": true,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Draggable": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "player1",
+            "X": 116,
+            "Y": 95,
+            "Width": 19,
+            "Height": 52,
+            "TextId": "__SingleUse_1OW4",
+            "TextRotation": "90",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 190,
+            "WideTextAction": 3
+          },
+          {
+            "Type": "TextArea",
+            "Name": "player2",
+            "X": 187,
+            "Y": 95,
+            "Width": 19,
+            "Height": 52,
+            "TextId": "__SingleUse_ERV8",
+            "TextRotation": "270",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 190,
+            "WideTextAction": 3
+          },
+          {
+            "Type": "TextArea",
+            "Name": "counter1",
+            "X": 53,
+            "Y": 112,
+            "Width": 29,
+            "Height": 17,
+            "TextId": "__SingleUse_HVEB",
+            "TextRotation": "90",
+            "Color": {
+              "Red": 222,
+              "Green": 171,
+              "Blue": 95
+            },
+            "Alpha": 210,
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "counter1Buffer",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "counter2",
+            "X": 243,
+            "Y": 111,
+            "Width": 29,
+            "Height": 17,
+            "TextId": "__SingleUse_WSW0",
+            "TextRotation": "270",
+            "Color": {
+              "Red": 222,
+              "Green": 171,
+              "Blue": 95
+            },
+            "Alpha": 210,
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "counter1Buffer",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerOnEveryTick",
+              "TickCount": 180
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "EasyScreen"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "EndScreen",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 320,
+            "Height": 240,
+            "Color": {
+              "Red": 173,
+              "Green": 220,
+              "Blue": 237
+            }
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "playagainButton",
+            "X": 91,
+            "Y": 164,
+            "Width": 138,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_36_small_round_disabled.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_36_small_round_disabled.png",
+            "TextId": "__SingleUse_VTUE",
+            "ReleasedColor": {
+              "Red": 237,
+              "Green": 241,
+              "Blue": 245
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_36\\small_round_disabled.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "playerwin",
+            "X": 105,
+            "Y": 93,
+            "Width": 86,
+            "Height": 37,
+            "TextId": "__SingleUse_9392",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 63,
+              "Green": 70,
+              "Blue": 105
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "winnerBuffer",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "winner",
+            "X": 91,
+            "Y": 28,
+            "Width": 131,
+            "Height": 37,
+            "TextId": "__SingleUse_86XU",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 63,
+              "Green": 70,
+              "Blue": 105
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction2",
+            "HasCompletedTrigger": true,
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "playagainButton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionWipe",
+              "ScreenTransitionDirection": "East",
+              "ActionComponent": "StartScreen"
+            }
+          }
+        ]
+      }
+    ],
+    "CustomContainerDefinitions": [],
+    "Name": "MyApp",
+    "Resolution": {
+      "Width": 240,
+      "Height": 320
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "StartScreen",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 240,
+        "Height": 320
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommandOverride": "make -f ../gcc/Makefile -j8",
+    "FlashTargetCommandOverride": "make -f ../gcc/Makefile flash",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "Family": "STM32F4",
+    "SubFamily": "STM32F429/439",
+    "Toolchain": "STM32CubeIDE",
+    "Platform": "m4",
+    "ProjectFile": "../STM32F429I_DISCO_REV_D01.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [],
+    "AdditionalFeatures": [
+      "CWRVector",
+      "VectorFonts"
+    ]
+  },
+  "Version": "4.26.1",
+  "CreatedBy": "4.24.1"
+}

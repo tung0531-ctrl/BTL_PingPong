@@ -1,0 +1,47 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Application.hpp:72:18:virtual void touchgfx::Application::changeToStartScreen()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Application.hpp:91:18:virtual void touchgfx::Application::appSwitchScreen(uint8_t)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Application.hpp:104:18:virtual void touchgfx::Application::requestRedraw(touchgfx::Rect&)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/Transition.hpp:72:18:virtual void touchgfx::Transition::tearDown()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/Transition.hpp:80:18:virtual void touchgfx::Transition::init()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/Transition.hpp:100:18:virtual void touchgfx::Transition::setScreenContainer(touchgfx::Container&)	1
+../../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp:43:7:touchgfx::MVPApplication::~MVPApplication()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:424:8:touchgfx::Callback<FrontendApplicationBase>::~Callback()	1
+../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp:16:13:FrontendApplicationBase::~FrontendApplicationBase()	1
+../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp:18:18:virtual void FrontendApplicationBase::changeToStartScreen()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/NoTransition.hpp:35:18:virtual void touchgfx::NoTransition::handleTickEvent()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/WipeTransition.hpp:37:7:touchgfx::WipeTransition<touchgfx::EAST>::~WipeTransition()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/NoTransition.hpp:31:7:touchgfx::NoTransition::~NoTransition()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/WipeTransition.hpp:144:18:void touchgfx::WipeTransition<templateDirection>::init() [with touchgfx::Direction templateDirection = touchgfx::EAST]	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:449:18:void touchgfx::Callback<dest_type, void, void, void>::execute() [with dest_type = FrontendApplicationBase]	2
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:459:18:bool touchgfx::Callback<dest_type, void, void, void>::isValid() const [with dest_type = FrontendApplicationBase]	3
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/NoTransition.hpp:31:7:virtual touchgfx::NoTransition::~NoTransition()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/WipeTransition.hpp:37:7:virtual touchgfx::WipeTransition<touchgfx::EAST>::~WipeTransition()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:424:8:virtual touchgfx::Callback<FrontendApplicationBase>::~Callback()	1
+../../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp:43:7:virtual touchgfx::MVPApplication::~MVPApplication()	1
+../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp:16:13:virtual FrontendApplicationBase::~FrontendApplicationBase()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/Transition.hpp:89:18:virtual void touchgfx::Transition::invalidate()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/WipeTransition.hpp:149:18:void touchgfx::WipeTransition<templateDirection>::invalidate() [with touchgfx::Direction templateDirection = touchgfx::EAST]	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/WipeTransition.hpp:69:18:void touchgfx::WipeTransition<templateDirection>::handleTickEvent() [with touchgfx::Direction templateDirection = touchgfx::EAST]	5
+../../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp:59:18:virtual void touchgfx::MVPApplication::handlePendingScreenTransition()	3
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp:310:17:static touchgfx::LCD& touchgfx::HAL::lcd()	3
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:31:1:FrontendApplicationBase::FrontendApplicationBase(Model&, FrontendHeap&)	1
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:50:6:void FrontendApplicationBase::gotoStartScreenScreenNoTransition()	1
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:61:6:void FrontendApplicationBase::gotoStartScreenScreenWipeTransitionEast()	1
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:74:6:void FrontendApplicationBase::gotoHardScreenScreenNoTransition()	1
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:87:6:void FrontendApplicationBase::gotoHardReadyScreenScreenWipeTransitionEast()	1
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:100:6:void FrontendApplicationBase::gotoMediumScreenScreenNoTransition()	1
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:113:6:void FrontendApplicationBase::gotoMediumReadyScreenScreenWipeTransitionEast()	1
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:126:6:void FrontendApplicationBase::gotoEasyScreenScreenNoTransition()	1
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:139:6:void FrontendApplicationBase::gotoEasyReadyScreenScreenWipeTransitionEast()	1
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:152:6:void FrontendApplicationBase::gotoEndScreenScreenNoTransition()	1
+../../Middlewares/ST/touchgfx/framework/include/common/AbstractPartition.hpp:135:8:T& touchgfx::AbstractPartition::at(uint16_t) [with T = touchgfx::NoTransition]	1
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:158:6:void FrontendApplicationBase::gotoEndScreenScreenNoTransitionImpl()	7
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:132:6:void FrontendApplicationBase::gotoEasyScreenScreenNoTransitionImpl()	7
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:106:6:void FrontendApplicationBase::gotoMediumScreenScreenNoTransitionImpl()	7
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:80:6:void FrontendApplicationBase::gotoHardScreenScreenNoTransitionImpl()	7
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:56:6:void FrontendApplicationBase::gotoStartScreenScreenNoTransitionImpl()	7
+../../Middlewares/ST/touchgfx/framework/include/common/AbstractPartition.hpp:135:8:T& touchgfx::AbstractPartition::at(uint16_t) [with T = touchgfx::WipeTransition<touchgfx::EAST>]	1
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:145:6:void FrontendApplicationBase::gotoEasyReadyScreenScreenWipeTransitionEastImpl()	7
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:119:6:void FrontendApplicationBase::gotoMediumReadyScreenScreenWipeTransitionEastImpl()	7
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:93:6:void FrontendApplicationBase::gotoHardReadyScreenScreenWipeTransitionEastImpl()	7
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp:67:6:void FrontendApplicationBase::gotoStartScreenScreenWipeTransitionEastImpl()	7

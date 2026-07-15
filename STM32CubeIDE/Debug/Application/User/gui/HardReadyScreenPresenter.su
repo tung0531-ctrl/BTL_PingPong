@@ -1,0 +1,5 @@
+../../TouchGFX/gui/include/gui/hardreadyscreen_screen/HardReadyScreenPresenter.hpp:28:13:HardReadyScreenPresenter::~HardReadyScreenPresenter()	0	static
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/hardreadyscreen_screen/HardReadyScreenPresenter.cpp:10:6:virtual void HardReadyScreenPresenter::activate()	0	static
+../../TouchGFX/gui/include/gui/hardreadyscreen_screen/HardReadyScreenPresenter.hpp:28:13:virtual HardReadyScreenPresenter::~HardReadyScreenPresenter()	8	static
+../../TouchGFX/gui/include/gui/hardreadyscreen_screen/HardReadyScreenPresenter.hpp:28:13:virtual void* HardReadyScreenPresenter::_ZThn4_N24HardReadyScreenPresenterD1Ev()	0	static
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/hardreadyscreen_screen/HardReadyScreenPresenter.cpp:4:1:HardReadyScreenPresenter::HardReadyScreenPresenter(HardReadyScreenView&)	0	static

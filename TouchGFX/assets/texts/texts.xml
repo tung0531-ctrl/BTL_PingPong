@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextDatabase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="texts.xsd" Version="4.26.1">
+  <Languages>
+    <Language Id="GB" />
+  </Languages>
+  <Texts>
+    <TextGroup Id="Group1" />
+    <TextGroup Id="Unsorted">
+      <Text Id="winnerBuffer" Alignment="Left" TypographyId="Default">
+        <Translation Language="GB"></Translation>
+      </Text>
+      <Text Id="score2Buffer3" Alignment="Left" TypographyId="Typography_01">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="score1Buffer3" Alignment="Left" TypographyId="Typography_01">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="score2Buffer2" Alignment="Left" TypographyId="Typography_01">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="score1Buffer2" Alignment="Left" TypographyId="Typography_01">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="score1Buffer1" Alignment="Left" TypographyId="Typography_01">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="score2Buffer1" Alignment="Left" TypographyId="Typography_01">
+        <Translation Language="GB">00</Translation>
+      </Text>
+      <Text Id="counter2Buffer" Alignment="Left" TypographyId="Typography_01">
+        <Translation Language="GB">3</Translation>
+      </Text>
+      <Text Id="counter3Buffer" Alignment="Left" TypographyId="Typography_01">
+        <Translation Language="GB">3</Translation>
+      </Text>
+      <Text Id="counter1Buffer" Alignment="Left" TypographyId="Typography_01">
+        <Translation Language="GB">3</Translation>
+      </Text>
+      <Text Id="__SingleUse_WFLF" Alignment="Center" TypographyId="Typography_01">
+        <Translation Language="GB">&lt;%s&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_7Q96" Alignment="Center" TypographyId="Typography_01">
+        <Translation Language="GB">&lt;%s&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_SJ6Y" Alignment="Left" TypographyId="Typography_06">
+        <Translation Language="GB">player2</Translation>
+      </Text>
+      <Text Id="__SingleUse_7S3Y" Alignment="Left" TypographyId="Typography_06">
+        <Translation Language="GB">player1</Translation>
+      </Text>
+      <Text Id="__SingleUse_CZR5" Alignment="Center" TypographyId="Typography_01">
+        <Translation Language="GB">&lt;%s&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_MH9F" Alignment="Center" TypographyId="Typography_01">
+        <Translation Language="GB">&lt;%s&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_CWXV" Alignment="Left" TypographyId="Typography_06">
+        <Translation Language="GB">player2</Translation>
+      </Text>
+      <Text Id="__SingleUse_VDK7" Alignment="Left" TypographyId="Typography_06">
+        <Translation Language="GB">player1</Translation>
+      </Text>
+      <Text Id="__SingleUse_ERV8" Alignment="Left" TypographyId="Typography_06">
+        <Translation Language="GB">player2</Translation>
+      </Text>
+      <Text Id="__SingleUse_WSW0" Alignment="Center" TypographyId="Typography_01">
+        <Translation Language="GB">&lt;%s&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_HVEB" Alignment="Center" TypographyId="Typography_01">
+        <Translation Language="GB">&lt;%s&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_1OW4" Alignment="Left" TypographyId="Typography_06">
+        <Translation Language="GB">player1</Translation>
+      </Text>
+      <Text Id="__SingleUse_FY8E" Alignment="Left" TypographyId="Typography_06">
+        <Translation Language="GB">player2</Translation>
+      </Text>
+      <Text Id="__SingleUse_Z3TY" Alignment="Left" TypographyId="Typography_06">
+        <Translation Language="GB">player1</Translation>
+      </Text>
+      <Text Id="__SingleUse_OTAD" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;%s&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_UN9H" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;%s&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_UJJ8" Alignment="Left" TypographyId="Typography_06">
+        <Translation Language="GB">player2</Translation>
+      </Text>
+      <Text Id="__SingleUse_V9P9" Alignment="Left" TypographyId="Typography_06">
+        <Translation Language="GB">player1</Translation>
+      </Text>
+      <Text Id="__SingleUse_ATHF" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;%s&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_KK9M" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;%s&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_OD39" Alignment="Left" TypographyId="Typography_06">
+        <Translation Language="GB">player2</Translation>
+      </Text>
+      <Text Id="__SingleUse_G2S8" Alignment="Left" TypographyId="Typography_06">
+        <Translation Language="GB">player1</Translation>
+      </Text>
+      <Text Id="__SingleUse_NJHY" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;%s&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_I1JY" Alignment="Left" TypographyId="Small">
+        <Translation Language="GB">&lt;%s&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_86XU" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">WINNER</Translation>
+      </Text>
+      <Text Id="__SingleUse_VTUE" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">PLAY AGAIN</Translation>
+      </Text>
+      <Text Id="__SingleUse_EUDS" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">Hard</Translation>
+      </Text>
+      <Text Id="__SingleUse_0R22" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">Easy</Translation>
+      </Text>
+      <Text Id="__SingleUse_AHDE" Alignment="Center" TypographyId="Small">
+        <Translation Language="GB">Medium</Translation>
+      </Text>
+      <Text Id="__SingleUse_YPFP" Alignment="Center" TypographyId="Large">
+        <Translation Language="GB">Ping Pong</Translation>
+      </Text>
+      <Text Id="__SingleUse_9392" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">player&lt;%d&gt;</Translation>
+      </Text>
+    </TextGroup>
+  </Texts>
+  <Typographies>
+    <Typography Id="Default" Font="verdana.ttf" Size="17" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="0123456789" />
+    <Typography Id="Large" Font="comicz.ttf" Size="29" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="0123456789" />
+    <Typography Id="Small" Font="comicbd.ttf" Size="18" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="0123456789" />
+    <Typography Id="Typography_00" Font="comicbd.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Typography_01" Font="comicbd.ttf" Size="28" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="0123456789" />
+    <Typography Id="Typography_02" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Typography_03" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Typography_04" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Typography_05" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Typography_06" Font="comicbd.ttf" Size="15" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Typography_07" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Typography_08" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Typography_09" Font="verdana.ttf" Size="20" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+  </Typographies>
+</TextDatabase>

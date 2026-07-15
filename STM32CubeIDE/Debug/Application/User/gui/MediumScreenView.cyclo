@@ -1,0 +1,12 @@
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:55:6:virtual void MediumScreenView::tearDownScreen()	1
+../../TouchGFX/gui/include/gui/mediumscreen_screen/MediumScreenView.hpp:11:13:MediumScreenView::~MediumScreenView()	1
+../../TouchGFX/gui/include/gui/mediumscreen_screen/MediumScreenView.hpp:11:13:virtual MediumScreenView::~MediumScreenView()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:588:18:virtual void touchgfx::Drawable::moveTo(int16_t, int16_t)	1
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:9:1:MediumScreenView::MediumScreenView()	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Line.hpp:95:10:void touchgfx::Line::setStart(T, T) [with T = int]	1
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Line.hpp:171:10:void touchgfx::Line::setEnd(T, T) [with T = float]	1
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:17:6:virtual void MediumScreenView::setupScreen()	1
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:60:6:virtual void MediumScreenView::handleTickEvent()	59

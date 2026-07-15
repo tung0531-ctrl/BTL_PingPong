@@ -1,0 +1,5 @@
+../../TouchGFX/gui/include/gui/easyreadyscreen_screen/EasyReadyScreenPresenter.hpp:28:13:EasyReadyScreenPresenter::~EasyReadyScreenPresenter()	1
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/easyreadyscreen_screen/EasyReadyScreenPresenter.cpp:10:6:virtual void EasyReadyScreenPresenter::activate()	1
+../../TouchGFX/gui/include/gui/easyreadyscreen_screen/EasyReadyScreenPresenter.hpp:28:13:virtual EasyReadyScreenPresenter::~EasyReadyScreenPresenter()	1
+../../TouchGFX/gui/include/gui/easyreadyscreen_screen/EasyReadyScreenPresenter.hpp:28:13:virtual void* EasyReadyScreenPresenter::_ZThn4_N24EasyReadyScreenPresenterD1Ev()	1
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/easyreadyscreen_screen/EasyReadyScreenPresenter.cpp:4:1:EasyReadyScreenPresenter::EasyReadyScreenPresenter(EasyReadyScreenView&)	1

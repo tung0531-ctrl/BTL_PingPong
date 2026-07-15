@@ -1,0 +1,5 @@
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/Middlewares/Third_Party/FreeRTOS/Source/list.c:37:6:vListInitialise	0	static
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/Middlewares/Third_Party/FreeRTOS/Source/list.c:62:6:vListInitialiseItem	0	static
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/Middlewares/Third_Party/FreeRTOS/Source/list.c:74:6:vListInsertEnd	0	static
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/Middlewares/Third_Party/FreeRTOS/Source/list.c:103:6:vListInsert	12	static
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/Middlewares/Third_Party/FreeRTOS/Source/list.c:170:13:uxListRemove	0	static
