@@ -1,5 +1,5 @@
 #include <gui/mediumscreen_screen/MediumScreenView.hpp>
-#include "main.h"
+#include "buzzer_music.h"
 #include "cmsis_os.h"
 #include "joystick_task.h"
 #include <cmath>
@@ -48,6 +48,7 @@ void MediumScreenView::updateAimLine(touchgfx::Line& line, float centerX, float 
 void MediumScreenView::setupScreen()
 {
     MediumScreenViewBase::setupScreen();
+    BuzzerMusic_StartGameLoop();
     score1 = 0;
 	score2 = 0;
 	gameOver = false;
@@ -85,32 +86,24 @@ void MediumScreenView::setupScreen()
 
 void MediumScreenView::tearDownScreen()
 {
+    BuzzerMusic_Stop();
     MediumScreenViewBase::tearDownScreen();
 }
 
 void MediumScreenView::handleTickEvent()
 {
     invalidate();
+    BuzzerMusic_Update();
 
 
     if (gameOver) {
+        BuzzerMusic_Stop();
     	line1.setVisible(false);
 		line1_1.setVisible(false);
 		line1.invalidate();
 		line1_1.invalidate();
         return;
     }
-    // Xử lý bíp buzzer
-	if (buzzerBeepCounter > 0) {
-		if (buzzerBeepCounter % 6 == 0) { // Bíp mỗi 100ms (6 ticks tại 60 FPS)
-			buzzerBeepState = !buzzerBeepState;
-			HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, buzzerBeepState ? GPIO_PIN_SET : GPIO_PIN_RESET);
-		}
-		buzzerBeepCounter--;
-		if (buzzerBeepCounter == 0) {
-			HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET); // Tắt buzzer sau khi bíp xong
-		}
-	}
 
     JoystickCommand_t command;
     while (osMessageQueueGet(joystickQueueHandle, &command, NULL, 0) == osOK) {
@@ -291,9 +284,7 @@ void MediumScreenView::handleTickEvent()
                         score1++;
                         Unicode::snprintf(MediumScreenViewBase::score1Buffer, MediumScreenViewBase::SCORE1_SIZE, "%d", score1);
                         MediumScreenViewBase::score1.invalidate();
-                        buzzerBeepCounter = 18; // 3 tiếng bíp (18 ticks = 3 * 6 ticks tại 60 FPS)
-						buzzerBeepState = true;
-						HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
+                        BuzzerMusic_Accent();
                         if (score1 >= 11) {
                             gameOver = true;
                             presenter->goToEndScreen(1);
@@ -328,9 +319,7 @@ void MediumScreenView::handleTickEvent()
                         score2++;
                         Unicode::snprintf(MediumScreenViewBase::score2Buffer, MediumScreenViewBase::SCORE2_SIZE, "%d", score2);
                         MediumScreenViewBase::score2.invalidate();
-                        buzzerBeepCounter = 18; // 3 tiếng bíp (18 ticks = 3 * 6 ticks tại 60 FPS)
-						buzzerBeepState = true;
-						HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
+                        BuzzerMusic_Accent();
                         if (score2 >= 11) {
                             gameOver = true;
                             presenter->goToEndScreen(2);

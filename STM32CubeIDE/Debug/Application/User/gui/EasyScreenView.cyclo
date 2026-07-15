@@ -1,14 +1,12 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/easyscreen_screen/EasyScreenView.cpp:94:6:virtual void EasyScreenView::tearDownScreen()	1
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/easyscreen_screen/EasyScreenView.cpp:95:6:virtual void EasyScreenView::tearDownScreen()	1
 ../../TouchGFX/gui/include/gui/easyscreen_screen/EasyScreenView.hpp:11:13:EasyScreenView::~EasyScreenView()	1
 ../../TouchGFX/gui/include/gui/easyscreen_screen/EasyScreenView.hpp:11:13:virtual EasyScreenView::~EasyScreenView()	1
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:233:10:void touchgfx::Drawable::setPosition(int16_t, int16_t, int16_t, int16_t)	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:588:18:virtual void touchgfx::Drawable::moveTo(int16_t, int16_t)	1
 D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/easyscreen_screen/EasyScreenView.cpp:14:1:EasyScreenView::EasyScreenView()	1
-../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/Line.hpp:171:10:void touchgfx::Line::setEnd(T, T) [with T = float]	1
 D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/easyscreen_screen/EasyScreenView.cpp:23:6:void EasyScreenView::invalidateAbsoluteArea(const touchgfx::Rect&, const touchgfx::Rect&)	11
 D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/easyscreen_screen/EasyScreenView.cpp:35:6:void EasyScreenView::moveBallTo(int16_t, int16_t)	1
 D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/easyscreen_screen/EasyScreenView.cpp:43:6:void EasyScreenView::updateAimLine(touchgfx::Line&, float, float, float, bool)	1
 D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/easyscreen_screen/EasyScreenView.cpp:55:6:virtual void EasyScreenView::setupScreen()	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/easyscreen_screen/EasyScreenView.cpp:100:6:virtual void EasyScreenView::handleTickEvent()	55
+D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/easyscreen_screen/EasyScreenView.cpp:102:6:virtual void EasyScreenView::handleTickEvent()	52

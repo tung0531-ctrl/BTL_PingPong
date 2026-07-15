@@ -2,7 +2,7 @@
 
 
 #include <gui/easyscreen_screen/EasyScreenView.hpp>
-#include "main.h"
+#include "buzzer_music.h"
 #include "cmsis_os.h"
 #include "joystick_task.h"
 #include <cmath>
@@ -55,6 +55,7 @@ void EasyScreenView::updateAimLine(touchgfx::Line& line, float centerX, float ce
 void EasyScreenView::setupScreen()
 {
     EasyScreenViewBase::setupScreen();
+    BuzzerMusic_StartGameLoop();
     score1 = 0;
     score2 = 0;
     gameOver = false;
@@ -93,6 +94,7 @@ void EasyScreenView::setupScreen()
 // Phương thức dọn dẹp khi thoát màn hình
 void EasyScreenView::tearDownScreen()
 {
+    BuzzerMusic_Stop();
     EasyScreenViewBase::tearDownScreen();
 }
 
@@ -100,25 +102,15 @@ void EasyScreenView::tearDownScreen()
 void EasyScreenView::handleTickEvent()
 {
     invalidate();
+    BuzzerMusic_Update();
 
     if (gameOver) {
+        BuzzerMusic_Stop();
         line1.setVisible(false);
         line1_1.setVisible(false);
         line1.invalidate();
         line1_1.invalidate();
         return;
-    }
-
-    // Xử lý âm thanh buzzer
-    if (buzzerBeepCounter > 0) {
-        if (buzzerBeepCounter % 6 == 0) {
-            buzzerBeepState = !buzzerBeepState;
-            HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, buzzerBeepState ? GPIO_PIN_SET : GPIO_PIN_RESET);
-        }
-        buzzerBeepCounter--;
-        if (buzzerBeepCounter == 0) {
-            HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
-        }
     }
 
     // Xử lý các lệnh joystick từ hàng đợi
@@ -293,9 +285,7 @@ void EasyScreenView::handleTickEvent()
             score2++;
             Unicode::snprintf(EasyScreenViewBase::score2Buffer, EasyScreenViewBase::SCORE2_SIZE, "%d", score2);
             EasyScreenViewBase::score2.invalidate();
-            buzzerBeepCounter = 18;
-            buzzerBeepState = true;
-            HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
+            BuzzerMusic_Accent();
 
             if (score2 >= 11) {
                 gameOver = true;
@@ -311,23 +301,13 @@ void EasyScreenView::handleTickEvent()
             ballY = paddle2.getY() + paddle2.getHeight()/2 - ball.getHeight()/2;
             desiredBallVelY2 = 0.0f;
             lineAngle2 = 0.0f;
-            // Cập nhật đường dẫn với tâm bóng
-            line1_1.invalidate();
-                        float ballCenterX = ballX + ball.getWidth() / 2.0f;
-                        float ballCenterY = ballY + ball.getHeight() / 2.0f;
-                        line1_1.setPosition(ballCenterX - 16, ballCenterY - 16, 33, 33);
-                        line1_1.setStart(16, 16);
-                        line1_1.setEnd(16 + 30 * cosf(lineAngle2 * M_PI / 180.0f), 16 + 30 * sinf(lineAngle2 * M_PI / 180.0f));
-                        line1_1.setVisible(true);
-                        line1_1.invalidate();
-                        ball.moveTo(ballX, ballY);
+            updateAimLine(line1_1, ballX + ball.getWidth() / 2.0f, ballY + ball.getHeight() / 2.0f, lineAngle2, true);
+            moveBallTo(ballX, ballY);
         } else if (ballX + ball.getWidth() > 320) {
             score1++;
             Unicode::snprintf(EasyScreenViewBase::score1Buffer, EasyScreenViewBase::SCORE1_SIZE, "%d", score1);
             EasyScreenViewBase::score1.invalidate();
-            buzzerBeepCounter = 18;
-            buzzerBeepState = true;
-            HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
+            BuzzerMusic_Accent();
 
             if (score1 >= 11) {
                 gameOver = true;
@@ -343,16 +323,8 @@ void EasyScreenView::handleTickEvent()
             ballY = paddle1.getY() + paddle1.getHeight()/2 - ball.getHeight()/2;
             desiredBallVelY1 = 0.0f;
             lineAngle1 = 0.0f;
-            // Cập nhật đường dẫn với tâm bóng
-            line1.invalidate();
-                        float ballCenterX = ballX + ball.getWidth() / 2.0f;
-                        float ballCenterY = ballY + ball.getHeight() / 2.0f;
-                        line1.setPosition(ballCenterX - 16, ballCenterY - 16, 33, 33);
-                        line1.setStart(16, 16);
-                        line1.setEnd(16 + 30 * cosf(lineAngle1 * M_PI / 180.0f), 16 + 30 * sinf(lineAngle1 * M_PI / 180.0f));
-                        line1.setVisible(true);
-                        line1.invalidate();
-                        ball.moveTo(ballX, ballY);
+            updateAimLine(line1, ballX + ball.getWidth() / 2.0f, ballY + ball.getHeight() / 2.0f, lineAngle1, true);
+            moveBallTo(ballX, ballY);
         }
 
         moveBallTo(ballX, ballY);

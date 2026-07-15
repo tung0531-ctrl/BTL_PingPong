@@ -28,6 +28,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "buzzer_music.h"
 #include "stm32f4xx_hal_adc.h"
 #include "Components/ili9341/ili9341.h"
 #include "stm32f4xx_hal_uart.h"
@@ -166,10 +167,197 @@ uint16_t                  IOE_ReadMultiple(uint8_t Addr, uint8_t Reg, uint8_t *p
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+typedef struct
+{
+  uint16_t frequency;
+  uint8_t ticks;
+} BuzzerStep;
+
+static TIM_HandleTypeDef htim4;
+static uint8_t buzzerInitialized = 0U;
+static uint8_t loopPlaying = 0U;
+static uint8_t accentPlaying = 0U;
+static size_t loopIndex = 0U;
+static uint8_t loopTicksRemaining = 0U;
+static size_t accentIndex = 0U;
+static uint8_t accentTicksRemaining = 0U;
+
+#define BUZZER_TIMER_HZ 1000000U
+#define BUZZER_TIM_CHANNEL TIM_CHANNEL_1
+
+static const BuzzerStep retroLoop[] = {
+  {523, 4}, {659, 4}, {784, 6}, {659, 4},
+  {440, 4}, {523, 4}, {659, 6}, {523, 4},
+  {392, 4}, {494, 4}, {587, 6}, {494, 4},
+  {349, 4}, {440, 4}, {523, 6}, {0, 4},
+  {392, 3}, {523, 3}, {659, 6}, {0, 4}
+};
+
+static const BuzzerStep scoreAccent[] = {
+  {1047, 2}, {1319, 2}, {1568, 4}, {0, 1}
+};
+
+static void BuzzerMusic_ApplyTone(uint16_t frequency)
+{
+  uint32_t period;
+
+  if (!buzzerInitialized)
+  {
+    return;
+  }
+
+  if (frequency == 0U)
+  {
+    __HAL_TIM_SET_COMPARE(&htim4, BUZZER_TIM_CHANNEL, 0U);
+    return;
+  }
+
+  period = BUZZER_TIMER_HZ / frequency;
+  if (period < 2U)
+  {
+    period = 2U;
+  }
+
+  __HAL_TIM_SET_AUTORELOAD(&htim4, period - 1U);
+  __HAL_TIM_SET_COMPARE(&htim4, BUZZER_TIM_CHANNEL, period / 2U);
+  __HAL_TIM_SET_COUNTER(&htim4, 0U);
+}
+
+static void BuzzerMusic_LoadLoopStep(void)
+{
+  const BuzzerStep* step = &retroLoop[loopIndex];
+  BuzzerMusic_ApplyTone(step->frequency);
+  loopTicksRemaining = step->ticks;
+  loopIndex = (loopIndex + 1U) % (sizeof(retroLoop) / sizeof(retroLoop[0]));
+}
+
+static void BuzzerMusic_LoadAccentStep(void)
+{
+  const BuzzerStep* step = &scoreAccent[accentIndex];
+  BuzzerMusic_ApplyTone(step->frequency);
+  accentTicksRemaining = step->ticks;
+  accentIndex++;
+  if (accentIndex >= (sizeof(scoreAccent) / sizeof(scoreAccent[0])))
+  {
+    accentPlaying = 0U;
+    accentIndex = 0U;
+    accentTicksRemaining = 0U;
+  }
+}
+
 static LCD_DrvTypeDef* LcdDrv;
 
 uint32_t I2c3Timeout = I2C3_TIMEOUT_MAX; /*<! Value of Timeout when I2C communication fails */
 uint32_t Spi5Timeout = SPI5_TIMEOUT_MAX; /*<! Value of Timeout when SPI communication fails */
+
+void BuzzerMusic_Init(void)
+{
+  GPIO_InitTypeDef gpioInitStruct = {0};
+  TIM_OC_InitTypeDef configOC = {0};
+
+  if (buzzerInitialized)
+  {
+    return;
+  }
+
+  __HAL_RCC_GPIOD_CLK_ENABLE();
+  __HAL_RCC_TIM4_CLK_ENABLE();
+
+  gpioInitStruct.Pin = GPIO_PIN_12;
+  gpioInitStruct.Mode = GPIO_MODE_AF_PP;
+  gpioInitStruct.Pull = GPIO_NOPULL;
+  gpioInitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  gpioInitStruct.Alternate = GPIO_AF2_TIM4;
+  HAL_GPIO_Init(GPIOD, &gpioInitStruct);
+
+  htim4.Instance = TIM4;
+  htim4.Init.Prescaler = 90U - 1U;
+  htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim4.Init.Period = 1000U - 1U;
+  htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_PWM_Init(&htim4) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  configOC.OCMode = TIM_OCMODE_PWM1;
+  configOC.Pulse = 0U;
+  configOC.OCPolarity = TIM_OCPOLARITY_HIGH;
+  configOC.OCFastMode = TIM_OCFAST_DISABLE;
+  if (HAL_TIM_PWM_ConfigChannel(&htim4, &configOC, BUZZER_TIM_CHANNEL) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  if (HAL_TIM_PWM_Start(&htim4, BUZZER_TIM_CHANNEL) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  buzzerInitialized = 1U;
+  BuzzerMusic_ApplyTone(0U);
+}
+
+void BuzzerMusic_StartGameLoop(void)
+{
+  BuzzerMusic_Init();
+
+  loopPlaying = 1U;
+  accentPlaying = 0U;
+  loopIndex = 0U;
+  loopTicksRemaining = 0U;
+  accentIndex = 0U;
+  accentTicksRemaining = 0U;
+  BuzzerMusic_LoadLoopStep();
+}
+
+void BuzzerMusic_Stop(void)
+{
+  loopPlaying = 0U;
+  accentPlaying = 0U;
+  loopTicksRemaining = 0U;
+  accentTicksRemaining = 0U;
+  BuzzerMusic_ApplyTone(0U);
+}
+
+void BuzzerMusic_Update(void)
+{
+  if (!loopPlaying && !accentPlaying)
+  {
+    return;
+  }
+
+  if (accentPlaying)
+  {
+    if (accentTicksRemaining == 0U)
+    {
+      BuzzerMusic_LoadAccentStep();
+      if (!accentPlaying)
+      {
+        BuzzerMusic_ApplyTone(0U);
+        loopTicksRemaining = 0U;
+        return;
+      }
+    }
+    accentTicksRemaining--;
+    return;
+  }
+
+  if (loopTicksRemaining == 0U)
+  {
+    BuzzerMusic_LoadLoopStep();
+  }
+  loopTicksRemaining--;
+}
+
+void BuzzerMusic_Accent(void)
+{
+  BuzzerMusic_Init();
+  accentPlaying = 1U;
+  accentIndex = 0U;
+  accentTicksRemaining = 0U;
+}
 /* USER CODE END 0 */
 
 /**
