@@ -2,8 +2,8 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
 ../../TouchGFX/generated/gui_generated/include/gui_generated/startscreen_screen/StartScreenViewBase.hpp:26:18:virtual void StartScreenViewBase::action1()	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/startscreen_screen/StartScreenView.cpp:13:6:virtual void StartScreenView::tearDownScreen()	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/startscreen_screen/StartScreenView.cpp:13:6:virtual void StartScreenView::tearDownScreen()	1
 ../../TouchGFX/gui/include/gui/startscreen_screen/StartScreenView.hpp:11:13:StartScreenView::~StartScreenView()	1
 ../../TouchGFX/gui/include/gui/startscreen_screen/StartScreenView.hpp:11:13:virtual StartScreenView::~StartScreenView()	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/startscreen_screen/StartScreenView.cpp:3:1:StartScreenView::StartScreenView()	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/startscreen_screen/StartScreenView.cpp:8:6:virtual void StartScreenView::setupScreen()	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/startscreen_screen/StartScreenView.cpp:3:1:StartScreenView::StartScreenView()	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/startscreen_screen/StartScreenView.cpp:8:6:virtual void StartScreenView::setupScreen()	1

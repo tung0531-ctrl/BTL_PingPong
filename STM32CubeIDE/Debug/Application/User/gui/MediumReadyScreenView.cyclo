@@ -1,9 +1,9 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumreadyscreen_screen/MediumReadyScreenView.cpp:14:6:virtual void MediumReadyScreenView::tearDownScreen()	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumreadyscreen_screen/MediumReadyScreenView.cpp:14:6:virtual void MediumReadyScreenView::tearDownScreen()	1
 ../../TouchGFX/gui/include/gui/mediumreadyscreen_screen/MediumReadyScreenView.hpp:11:13:MediumReadyScreenView::~MediumReadyScreenView()	1
 ../../TouchGFX/gui/include/gui/mediumreadyscreen_screen/MediumReadyScreenView.hpp:11:13:virtual MediumReadyScreenView::~MediumReadyScreenView()	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumreadyscreen_screen/MediumReadyScreenView.cpp:18:6:virtual void MediumReadyScreenView::handleTickEvent()	2
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumreadyscreen_screen/MediumReadyScreenView.cpp:3:1:MediumReadyScreenView::MediumReadyScreenView()	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumreadyscreen_screen/MediumReadyScreenView.cpp:8:6:virtual void MediumReadyScreenView::setupScreen()	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumreadyscreen_screen/MediumReadyScreenView.cpp:31:6:virtual void MediumReadyScreenView::updateCounter(int)	3
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumreadyscreen_screen/MediumReadyScreenView.cpp:18:6:virtual void MediumReadyScreenView::handleTickEvent()	2
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumreadyscreen_screen/MediumReadyScreenView.cpp:3:1:MediumReadyScreenView::MediumReadyScreenView()	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumreadyscreen_screen/MediumReadyScreenView.cpp:8:6:virtual void MediumReadyScreenView::setupScreen()	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumreadyscreen_screen/MediumReadyScreenView.cpp:31:6:virtual void MediumReadyScreenView::updateCounter(int)	3

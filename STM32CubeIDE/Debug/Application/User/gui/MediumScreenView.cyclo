@@ -1,12 +1,12 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:87:6:virtual void MediumScreenView::tearDownScreen()	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:87:6:virtual void MediumScreenView::tearDownScreen()	1
 ../../TouchGFX/gui/include/gui/mediumscreen_screen/MediumScreenView.hpp:11:13:MediumScreenView::~MediumScreenView()	1
 ../../TouchGFX/gui/include/gui/mediumscreen_screen/MediumScreenView.hpp:11:13:virtual MediumScreenView::~MediumScreenView()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:588:18:virtual void touchgfx::Drawable::moveTo(int16_t, int16_t)	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:9:1:MediumScreenView::MediumScreenView()	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:17:6:void MediumScreenView::invalidateAbsoluteArea(const touchgfx::Rect&, const touchgfx::Rect&)	11
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:29:6:void MediumScreenView::moveBallTo(int16_t, int16_t)	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:37:6:void MediumScreenView::updateAimLine(touchgfx::Line&, float, float, float, bool)	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:48:6:virtual void MediumScreenView::setupScreen()	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:93:6:virtual void MediumScreenView::handleTickEvent()	56
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:9:1:MediumScreenView::MediumScreenView()	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:17:6:void MediumScreenView::invalidateAbsoluteArea(const touchgfx::Rect&, const touchgfx::Rect&)	11
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:29:6:void MediumScreenView::moveBallTo(int16_t, int16_t)	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:37:6:void MediumScreenView::updateAimLine(touchgfx::Line&, float, float, float, bool)	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:48:6:virtual void MediumScreenView::setupScreen()	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:93:6:virtual void MediumScreenView::handleTickEvent()	56

@@ -223,7 +223,8 @@ board_c_files += \
     $(Drivers_path)/BSP/Components/stmpe811/stmpe811.c \
     $(Drivers_path)/BSP/Components/ili9341/ili9341.c
 
-board_cpp_files :=
+board_cpp_files := \
+	STM32CubeIDE/Application/User/joystick_task.cpp
 
 board_include_paths := \
     Drivers/CMSIS/Device/ST/STM32F4xx/Include \

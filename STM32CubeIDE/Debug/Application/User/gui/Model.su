@@ -1,5 +1,5 @@
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/model/Model.cpp:8:1:Model::Model()	0	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/model/Model.cpp:12:6:void Model::tick()	0	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/model/Model.cpp:42:6:void Model::setWinner(int)	0	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/model/Model.cpp:48:5:int Model::getWinner(int)	8	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/model/Model.cpp:55:6:void Model::resetGame()	0	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/model/Model.cpp:8:1:Model::Model()	0	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/model/Model.cpp:12:6:void Model::tick()	0	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/model/Model.cpp:42:6:void Model::setWinner(int)	0	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/model/Model.cpp:48:5:int Model::getWinner(int)	8	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/model/Model.cpp:55:6:void Model::resetGame()	0	static

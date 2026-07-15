@@ -1,9 +1,9 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/easyreadyscreen_screen/EasyReadyScreenView.cpp:15:6:virtual void EasyReadyScreenView::tearDownScreen()	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/easyreadyscreen_screen/EasyReadyScreenView.cpp:15:6:virtual void EasyReadyScreenView::tearDownScreen()	1
 ../../TouchGFX/gui/include/gui/easyreadyscreen_screen/EasyReadyScreenView.hpp:11:13:EasyReadyScreenView::~EasyReadyScreenView()	1
 ../../TouchGFX/gui/include/gui/easyreadyscreen_screen/EasyReadyScreenView.hpp:11:13:virtual EasyReadyScreenView::~EasyReadyScreenView()	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/easyreadyscreen_screen/EasyReadyScreenView.cpp:19:6:virtual void EasyReadyScreenView::handleTickEvent()	2
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/easyreadyscreen_screen/EasyReadyScreenView.cpp:3:1:EasyReadyScreenView::EasyReadyScreenView()	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/easyreadyscreen_screen/EasyReadyScreenView.cpp:9:6:virtual void EasyReadyScreenView::setupScreen()	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/easyreadyscreen_screen/EasyReadyScreenView.cpp:32:6:virtual void EasyReadyScreenView::updateCounter(int)	3
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/easyreadyscreen_screen/EasyReadyScreenView.cpp:19:6:virtual void EasyReadyScreenView::handleTickEvent()	2
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/easyreadyscreen_screen/EasyReadyScreenView.cpp:3:1:EasyReadyScreenView::EasyReadyScreenView()	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/easyreadyscreen_screen/EasyReadyScreenView.cpp:9:6:virtual void EasyReadyScreenView::setupScreen()	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/easyreadyscreen_screen/EasyReadyScreenView.cpp:32:6:virtual void EasyReadyScreenView::updateCounter(int)	3

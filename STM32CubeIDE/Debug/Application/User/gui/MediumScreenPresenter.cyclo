@@ -1,7 +1,7 @@
 ../../TouchGFX/gui/include/gui/mediumscreen_screen/MediumScreenPresenter.hpp:30:13:MediumScreenPresenter::~MediumScreenPresenter()	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumscreen_screen/MediumScreenPresenter.cpp:15:6:virtual void MediumScreenPresenter::deactivate()	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenPresenter.cpp:15:6:virtual void MediumScreenPresenter::deactivate()	1
 ../../TouchGFX/gui/include/gui/mediumscreen_screen/MediumScreenPresenter.hpp:30:13:virtual MediumScreenPresenter::~MediumScreenPresenter()	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumscreen_screen/MediumScreenPresenter.cpp:10:6:virtual void MediumScreenPresenter::activate()	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenPresenter.cpp:10:6:virtual void MediumScreenPresenter::activate()	1
 ../../TouchGFX/gui/include/gui/mediumscreen_screen/MediumScreenPresenter.hpp:30:13:virtual void* MediumScreenPresenter::_ZThn4_N21MediumScreenPresenterD1Ev()	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumscreen_screen/MediumScreenPresenter.cpp:4:1:MediumScreenPresenter::MediumScreenPresenter(MediumScreenView&)	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumscreen_screen/MediumScreenPresenter.cpp:23:6:void MediumScreenPresenter::goToEndScreen(int)	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenPresenter.cpp:4:1:MediumScreenPresenter::MediumScreenPresenter(MediumScreenView&)	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenPresenter.cpp:23:6:void MediumScreenPresenter::goToEndScreen(int)	1

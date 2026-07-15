@@ -1,5 +1,5 @@
 ../../TouchGFX/gui/include/gui/mediumreadyscreen_screen/MediumReadyScreenPresenter.hpp:28:13:MediumReadyScreenPresenter::~MediumReadyScreenPresenter()	0	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumreadyscreen_screen/MediumReadyScreenPresenter.cpp:10:6:virtual void MediumReadyScreenPresenter::activate()	0	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumreadyscreen_screen/MediumReadyScreenPresenter.cpp:10:6:virtual void MediumReadyScreenPresenter::activate()	0	static
 ../../TouchGFX/gui/include/gui/mediumreadyscreen_screen/MediumReadyScreenPresenter.hpp:28:13:virtual MediumReadyScreenPresenter::~MediumReadyScreenPresenter()	8	static
 ../../TouchGFX/gui/include/gui/mediumreadyscreen_screen/MediumReadyScreenPresenter.hpp:28:13:virtual void* MediumReadyScreenPresenter::_ZThn4_N26MediumReadyScreenPresenterD1Ev()	0	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/mediumreadyscreen_screen/MediumReadyScreenPresenter.cpp:4:1:MediumReadyScreenPresenter::MediumReadyScreenPresenter(MediumReadyScreenView&)	0	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumreadyscreen_screen/MediumReadyScreenPresenter.cpp:4:1:MediumReadyScreenPresenter::MediumReadyScreenPresenter(MediumReadyScreenView&)	0	static

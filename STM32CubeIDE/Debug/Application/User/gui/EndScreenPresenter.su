@@ -1,8 +1,8 @@
 ../../TouchGFX/gui/include/gui/endscreen_screen/EndScreenPresenter.hpp:31:13:EndScreenPresenter::~EndScreenPresenter()	0	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/endscreen_screen/EndScreenPresenter.cpp:10:6:virtual void EndScreenPresenter::activate()	0	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/endscreen_screen/EndScreenPresenter.cpp:15:6:virtual void EndScreenPresenter::deactivate()	0	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/endscreen_screen/EndScreenPresenter.cpp:10:6:virtual void EndScreenPresenter::activate()	0	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/endscreen_screen/EndScreenPresenter.cpp:15:6:virtual void EndScreenPresenter::deactivate()	0	static
 ../../TouchGFX/gui/include/gui/endscreen_screen/EndScreenPresenter.hpp:31:13:virtual EndScreenPresenter::~EndScreenPresenter()	8	static
 ../../TouchGFX/gui/include/gui/endscreen_screen/EndScreenPresenter.hpp:31:13:virtual void* EndScreenPresenter::_ZThn4_N18EndScreenPresenterD1Ev()	0	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/endscreen_screen/EndScreenPresenter.cpp:4:1:EndScreenPresenter::EndScreenPresenter(EndScreenView&)	0	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/endscreen_screen/EndScreenPresenter.cpp:19:5:int EndScreenPresenter::getWinner(int)	0	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/endscreen_screen/EndScreenPresenter.cpp:24:6:void EndScreenPresenter::handlePlayAgain()	8	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/endscreen_screen/EndScreenPresenter.cpp:4:1:EndScreenPresenter::EndScreenPresenter(EndScreenView&)	0	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/endscreen_screen/EndScreenPresenter.cpp:19:5:int EndScreenPresenter::getWinner(int)	0	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/endscreen_screen/EndScreenPresenter.cpp:24:6:void EndScreenPresenter::handlePlayAgain()	8	static

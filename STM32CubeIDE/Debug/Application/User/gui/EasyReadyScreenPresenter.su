@@ -1,5 +1,5 @@
 ../../TouchGFX/gui/include/gui/easyreadyscreen_screen/EasyReadyScreenPresenter.hpp:28:13:EasyReadyScreenPresenter::~EasyReadyScreenPresenter()	0	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/easyreadyscreen_screen/EasyReadyScreenPresenter.cpp:10:6:virtual void EasyReadyScreenPresenter::activate()	0	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/easyreadyscreen_screen/EasyReadyScreenPresenter.cpp:10:6:virtual void EasyReadyScreenPresenter::activate()	0	static
 ../../TouchGFX/gui/include/gui/easyreadyscreen_screen/EasyReadyScreenPresenter.hpp:28:13:virtual EasyReadyScreenPresenter::~EasyReadyScreenPresenter()	8	static
 ../../TouchGFX/gui/include/gui/easyreadyscreen_screen/EasyReadyScreenPresenter.hpp:28:13:virtual void* EasyReadyScreenPresenter::_ZThn4_N24EasyReadyScreenPresenterD1Ev()	0	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/easyreadyscreen_screen/EasyReadyScreenPresenter.cpp:4:1:EasyReadyScreenPresenter::EasyReadyScreenPresenter(EasyReadyScreenView&)	0	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/easyreadyscreen_screen/EasyReadyScreenPresenter.cpp:4:1:EasyReadyScreenPresenter::EasyReadyScreenPresenter(EasyReadyScreenView&)	0	static

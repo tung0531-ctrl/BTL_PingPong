@@ -1,2 +1,2 @@
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/generated/images/src/BitmapDatabase.cpp:23:37:const touchgfx::Bitmap::BitmapData* BitmapDatabase::getInstance()	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/generated/images/src/BitmapDatabase.cpp:28:10:uint16_t BitmapDatabase::getInstanceSize()	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/generated/images/src/BitmapDatabase.cpp:23:37:const touchgfx::Bitmap::BitmapData* BitmapDatabase::getInstance()	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/generated/images/src/BitmapDatabase.cpp:28:10:uint16_t BitmapDatabase::getInstanceSize()	1

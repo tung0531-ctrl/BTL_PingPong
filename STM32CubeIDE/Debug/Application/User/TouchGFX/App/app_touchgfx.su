@@ -1,4 +1,4 @@
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/App/app_touchgfx.c:58:6:MX_TouchGFX_PreOSInit	0	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/App/app_touchgfx.c:65:6:MX_TouchGFX_Init	8	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/App/app_touchgfx.c:75:6:MX_TouchGFX_Process	0	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/App/app_touchgfx.c:84:6:TouchGFX_Task	0	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/App/app_touchgfx.c:58:6:MX_TouchGFX_PreOSInit	0	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/App/app_touchgfx.c:65:6:MX_TouchGFX_Init	8	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/App/app_touchgfx.c:75:6:MX_TouchGFX_Process	0	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/App/app_touchgfx.c:84:6:TouchGFX_Task	0	static

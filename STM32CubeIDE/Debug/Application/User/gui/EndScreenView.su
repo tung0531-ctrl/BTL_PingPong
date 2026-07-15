@@ -1,9 +1,9 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:144:18:virtual void touchgfx::Screen::handleTickEvent()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/endscreen_screen/EndScreenView.cpp:16:6:virtual void EndScreenView::tearDownScreen()	0	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/endscreen_screen/EndScreenView.cpp:16:6:virtual void EndScreenView::tearDownScreen()	0	static
 ../../TouchGFX/gui/include/gui/endscreen_screen/EndScreenView.hpp:11:13:EndScreenView::~EndScreenView()	8	static
 ../../TouchGFX/gui/include/gui/endscreen_screen/EndScreenView.hpp:11:13:virtual EndScreenView::~EndScreenView()	8	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/endscreen_screen/EndScreenView.cpp:4:1:EndScreenView::EndScreenView()	8	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/endscreen_screen/EndScreenView.cpp:9:6:virtual void EndScreenView::setupScreen()	0	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/endscreen_screen/EndScreenView.cpp:21:6:virtual void EndScreenView::updateWinner()	16	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/endscreen_screen/EndScreenView.cpp:4:1:EndScreenView::EndScreenView()	8	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/endscreen_screen/EndScreenView.cpp:9:6:virtual void EndScreenView::setupScreen()	0	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/endscreen_screen/EndScreenView.cpp:21:6:virtual void EndScreenView::updateWinner()	16	static

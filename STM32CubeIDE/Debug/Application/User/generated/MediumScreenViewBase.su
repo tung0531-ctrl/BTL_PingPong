@@ -29,14 +29,14 @@
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:touchgfx::View<MediumScreenPresenter>::~View()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/Draggable.hpp:32:7:touchgfx::Draggable<touchgfx::Box>::~Draggable()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:62:7:touchgfx::TextAreaWithOneWildcard::~TextAreaWithOneWildcard()	0	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/generated/gui_generated/src/mediumscreen_screen/MediumScreenViewBase.cpp:121:6:virtual void MediumScreenViewBase::setupScreen()	0	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/generated/gui_generated/src/mediumscreen_screen/MediumScreenViewBase.cpp:121:6:virtual void MediumScreenViewBase::setupScreen()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:36:7:virtual touchgfx::View<MediumScreenPresenter>::~View()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:62:7:virtual touchgfx::TextAreaWithOneWildcard::~TextAreaWithOneWildcard()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/Draggable.hpp:32:7:virtual touchgfx::Draggable<touchgfx::Box>::~Draggable()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/Draggable.hpp:48:18:void touchgfx::Draggable<T>::handleDragEvent(const touchgfx::DragEvent&) [with T = touchgfx::Box]	0	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/generated/gui_generated/src/mediumscreen_screen/MediumScreenViewBase.cpp:116:1:MediumScreenViewBase::~MediumScreenViewBase()	8	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/generated/gui_generated/src/mediumscreen_screen/MediumScreenViewBase.cpp:116:1:virtual MediumScreenViewBase::~MediumScreenViewBase()	8	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/generated/gui_generated/src/mediumscreen_screen/MediumScreenViewBase.cpp:116:1:MediumScreenViewBase::~MediumScreenViewBase()	8	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/generated/gui_generated/src/mediumscreen_screen/MediumScreenViewBase.cpp:116:1:virtual MediumScreenViewBase::~MediumScreenViewBase()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:97:18:virtual void touchgfx::Box::invalidateContent() const	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:43:18:virtual void touchgfx::TextAreaWithWildcardBase::invalidateContent() const	8	static
@@ -48,4 +48,4 @@ D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/generated/gui_generated
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:33:5:touchgfx::Box::Box()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:43:5:touchgfx::TextArea::TextArea()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/canvas/AbstractPainterRGB565.hpp:41:5:touchgfx::AbstractPainterRGB565::AbstractPainterRGB565()	16	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/generated/gui_generated/src/mediumscreen_screen/MediumScreenViewBase.cpp:9:1:MediumScreenViewBase::MediumScreenViewBase()	80	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/generated/gui_generated/src/mediumscreen_screen/MediumScreenViewBase.cpp:9:1:MediumScreenViewBase::MediumScreenViewBase()	80	static

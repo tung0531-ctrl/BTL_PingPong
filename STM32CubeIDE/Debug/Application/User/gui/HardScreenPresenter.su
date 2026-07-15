@@ -1,7 +1,7 @@
 ../../TouchGFX/gui/include/gui/hardscreen_screen/HardScreenPresenter.hpp:30:13:HardScreenPresenter::~HardScreenPresenter()	0	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/hardscreen_screen/HardScreenPresenter.cpp:10:6:virtual void HardScreenPresenter::activate()	0	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenPresenter.cpp:10:6:virtual void HardScreenPresenter::activate()	0	static
 ../../TouchGFX/gui/include/gui/hardscreen_screen/HardScreenPresenter.hpp:30:13:virtual HardScreenPresenter::~HardScreenPresenter()	8	static
 ../../TouchGFX/gui/include/gui/hardscreen_screen/HardScreenPresenter.hpp:30:13:virtual void* HardScreenPresenter::_ZThn4_N19HardScreenPresenterD1Ev()	0	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/hardscreen_screen/HardScreenPresenter.cpp:4:1:HardScreenPresenter::HardScreenPresenter(HardScreenView&)	0	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/hardscreen_screen/HardScreenPresenter.cpp:24:6:void HardScreenPresenter::goToEndScreen(int)	8	static
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/hardscreen_screen/HardScreenPresenter.cpp:29:6:void HardScreenPresenter::resetGame()	0	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenPresenter.cpp:4:1:HardScreenPresenter::HardScreenPresenter(HardScreenView&)	0	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenPresenter.cpp:24:6:void HardScreenPresenter::goToEndScreen(int)	8	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenPresenter.cpp:29:6:void HardScreenPresenter::resetGame()	0	static

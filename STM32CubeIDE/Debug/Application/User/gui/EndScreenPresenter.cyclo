@@ -1,8 +1,8 @@
 ../../TouchGFX/gui/include/gui/endscreen_screen/EndScreenPresenter.hpp:31:13:EndScreenPresenter::~EndScreenPresenter()	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/endscreen_screen/EndScreenPresenter.cpp:10:6:virtual void EndScreenPresenter::activate()	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/endscreen_screen/EndScreenPresenter.cpp:15:6:virtual void EndScreenPresenter::deactivate()	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/endscreen_screen/EndScreenPresenter.cpp:10:6:virtual void EndScreenPresenter::activate()	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/endscreen_screen/EndScreenPresenter.cpp:15:6:virtual void EndScreenPresenter::deactivate()	1
 ../../TouchGFX/gui/include/gui/endscreen_screen/EndScreenPresenter.hpp:31:13:virtual EndScreenPresenter::~EndScreenPresenter()	1
 ../../TouchGFX/gui/include/gui/endscreen_screen/EndScreenPresenter.hpp:31:13:virtual void* EndScreenPresenter::_ZThn4_N18EndScreenPresenterD1Ev()	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/endscreen_screen/EndScreenPresenter.cpp:4:1:EndScreenPresenter::EndScreenPresenter(EndScreenView&)	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/endscreen_screen/EndScreenPresenter.cpp:19:5:int EndScreenPresenter::getWinner(int)	1
-D:/Document_from_C/2025_2/Henhung/btl_157/MyApp/TouchGFX/gui/src/endscreen_screen/EndScreenPresenter.cpp:24:6:void EndScreenPresenter::handlePlayAgain()	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/endscreen_screen/EndScreenPresenter.cpp:4:1:EndScreenPresenter::EndScreenPresenter(EndScreenView&)	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/endscreen_screen/EndScreenPresenter.cpp:19:5:int EndScreenPresenter::getWinner(int)	1
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/endscreen_screen/EndScreenPresenter.cpp:24:6:void EndScreenPresenter::handlePlayAgain()	1
