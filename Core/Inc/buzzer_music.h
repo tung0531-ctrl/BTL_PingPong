@@ -10,6 +10,8 @@ void BuzzerMusic_StartGameLoop(void);
 void BuzzerMusic_Stop(void);
 void BuzzerMusic_Update(void);
 void BuzzerMusic_Accent(void);
+void BuzzerMusic_PaddleBounce(void);
+void BuzzerMusic_WallBounce(void);
 
 #ifdef __cplusplus
 }

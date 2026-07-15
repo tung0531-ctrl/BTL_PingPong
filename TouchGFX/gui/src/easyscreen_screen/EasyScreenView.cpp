@@ -302,9 +302,11 @@ void EasyScreenView::handleTickEvent()
         if (ballY < 0) {
             ballY = 0;
             ballVelY = -ballVelY;
+            BuzzerMusic_WallBounce();
         } else if (ballY + ball.getHeight() > 240) {
             ballY = 240 - ball.getHeight();
             ballVelY = -ballVelY;
+            BuzzerMusic_WallBounce();
         }
 
         // Xử lý va chạm với paddle1
@@ -313,6 +315,7 @@ void EasyScreenView::handleTickEvent()
             ballY + ball.getHeight() >= paddle1.getY() &&
             ballY <= paddle1.getY() + paddle1.getHeight()) {
             applyPaddleBounce(ballX, ballY, ballVelX, ballVelY, ball.getWidth(), ball.getHeight(), paddle1, true);
+            BuzzerMusic_PaddleBounce();
         }
 
         // Xử lý va chạm với paddle2
@@ -321,6 +324,7 @@ void EasyScreenView::handleTickEvent()
             ballY + ball.getHeight() >= paddle2.getY() &&
             ballY <= paddle2.getY() + paddle2.getHeight()) {
             applyPaddleBounce(ballX, ballY, ballVelX, ballVelY, ball.getWidth(), ball.getHeight(), paddle2, false);
+            BuzzerMusic_PaddleBounce();
         }
 
         // Xử lý ghi điểm

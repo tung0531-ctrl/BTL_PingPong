@@ -15,4 +15,4 @@ D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_s
 D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:125:6:void MediumScreenView::showAimLineForPlayer(int)	16	static
 D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:87:6:void MediumScreenView::refreshStaticScene()	8	static
 D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:142:6:virtual void MediumScreenView::setupScreen()	24	static
-D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:184:6:virtual void MediumScreenView::handleTickEvent()	56	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/mediumscreen_screen/MediumScreenView.cpp:184:6:virtual void MediumScreenView::handleTickEvent()	64	static

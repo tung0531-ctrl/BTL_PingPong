@@ -173,33 +173,66 @@ typedef struct
   uint8_t ticks;
 } BuzzerStep;
 
-static TIM_HandleTypeDef htim4;
+TIM_HandleTypeDef htim7;
 static uint8_t buzzerInitialized = 0U;
+static uint8_t effectPlaying = 0U;
+static const BuzzerStep* currentEffect = NULL;
+static size_t currentEffectLength = 0U;
+static size_t effectIndex = 0U;
+static uint8_t effectTicksRemaining = 0U;
+static uint8_t effectGuardTicks = 0U;
+static uint8_t buzzerToneActive = 0U;
 static uint8_t loopPlaying = 0U;
-static uint8_t accentPlaying = 0U;
 static size_t loopIndex = 0U;
 static uint8_t loopTicksRemaining = 0U;
-static size_t accentIndex = 0U;
-static uint8_t accentTicksRemaining = 0U;
 
+/* The buzzer tone is bit-banged in software on PG13: this pin is configured
+   as a plain push-pull GPIO output for its entire life and is NEVER switched
+   to an alternate function. That guarantees it can never be silently driven
+   in the background by the FMC (SDRAM) or LTDC peripherals the way PD12 was
+   (PD12 doubles as an FMC address line, which toggles constantly while the
+   SDRAM-backed LCD framebuffer is in use). TIM7 only supplies a periodic
+   interrupt used to flip the pin; it never drives any pin itself, so there
+   is no alternate-function pin sharing at all. */
 #define BUZZER_TIMER_HZ 1000000U
-#define BUZZER_TIM_CHANNEL TIM_CHANNEL_1
-
-static const BuzzerStep retroLoop[] = {
-  {523, 4}, {659, 4}, {784, 6}, {659, 4},
-  {440, 4}, {523, 4}, {659, 6}, {523, 4},
-  {392, 4}, {494, 4}, {587, 6}, {494, 4},
-  {349, 4}, {440, 4}, {523, 6}, {0, 4},
-  {392, 3}, {523, 3}, {659, 6}, {0, 4}
-};
+#define BUZZER_GPIO_PORT GPIOG
+#define BUZZER_GPIO_PIN GPIO_PIN_13
 
 static const BuzzerStep scoreAccent[] = {
-  {1047, 2}, {1319, 2}, {1568, 4}, {0, 1}
+  {659, 2}, {784, 2}, {988, 3}, {0, 1}
 };
+
+static const BuzzerStep paddleBounceEffect[] = {
+  {523, 1}, {659, 1}, {0, 1}
+};
+
+static const BuzzerStep wallBounceEffect[] = {
+  {392, 1}, {0, 1}
+};
+
+/* Original background loop (not derived from any existing song). This is
+   the same tune that was composed earlier for this project, with a short
+   rest inserted after every note so each one sounds as a single clean
+   beep instead of blurring into the next note as a "double beep" (which
+   also looked like a double LED flash, since the buzzer pin doubles as
+   the on-board LED). Note/rest durations are scaled up for a slower,
+   more relaxed tempo. */
+static const BuzzerStep backgroundLoop[] = {
+  {523, 10}, {0, 3}, {659, 10}, {0, 3}, {784, 14}, {0, 3}, {659, 10}, {0, 6},
+  {440, 10}, {0, 3}, {523, 10}, {0, 3}, {659, 14}, {0, 3}, {523, 10}, {0, 6},
+  {392, 10}, {0, 3}, {494, 10}, {0, 3}, {587, 14}, {0, 3}, {494, 10}, {0, 6},
+  {349, 10}, {0, 3}, {440, 10}, {0, 3}, {523, 14}, {0, 9},
+  {392, 8}, {0, 3}, {523, 8}, {0, 3}, {659, 14}, {0, 9}
+};
+
+static void BuzzerMusic_SetPinIdle(void)
+{
+  HAL_GPIO_WritePin(BUZZER_GPIO_PORT, BUZZER_GPIO_PIN, GPIO_PIN_RESET);
+}
 
 static void BuzzerMusic_ApplyTone(uint16_t frequency)
 {
-  uint32_t period;
+  uint32_t halfPeriod;
 
   if (!buzzerInitialized)
   {
@@ -208,41 +241,75 @@ static void BuzzerMusic_ApplyTone(uint16_t frequency)
 
   if (frequency == 0U)
   {
-    __HAL_TIM_SET_COMPARE(&htim4, BUZZER_TIM_CHANNEL, 0U);
+    if (buzzerToneActive)
+    {
+      HAL_TIM_Base_Stop_IT(&htim7);
+      buzzerToneActive = 0U;
+    }
+    BuzzerMusic_SetPinIdle();
     return;
   }
 
-  period = BUZZER_TIMER_HZ / frequency;
-  if (period < 2U)
+  /* Toggling the pin once every half period produces a square wave at
+     `frequency`, all in plain GPIO output mode. */
+  halfPeriod = BUZZER_TIMER_HZ / (2U * frequency);
+  if (halfPeriod < 2U)
   {
-    period = 2U;
+    halfPeriod = 2U;
   }
 
-  __HAL_TIM_SET_AUTORELOAD(&htim4, period - 1U);
-  __HAL_TIM_SET_COMPARE(&htim4, BUZZER_TIM_CHANNEL, period / 2U);
-  __HAL_TIM_SET_COUNTER(&htim4, 0U);
+  __HAL_TIM_SET_AUTORELOAD(&htim7, halfPeriod - 1U);
+  __HAL_TIM_SET_COUNTER(&htim7, 0U);
+
+  if (!buzzerToneActive)
+  {
+    HAL_GPIO_WritePin(BUZZER_GPIO_PORT, BUZZER_GPIO_PIN, GPIO_PIN_SET);
+    if (HAL_TIM_Base_Start_IT(&htim7) != HAL_OK)
+    {
+      Error_Handler();
+    }
+    buzzerToneActive = 1U;
+  }
 }
 
 static void BuzzerMusic_LoadLoopStep(void)
 {
-  const BuzzerStep* step = &retroLoop[loopIndex];
+  const BuzzerStep* step = &backgroundLoop[loopIndex];
   BuzzerMusic_ApplyTone(step->frequency);
   loopTicksRemaining = step->ticks;
-  loopIndex = (loopIndex + 1U) % (sizeof(retroLoop) / sizeof(retroLoop[0]));
+  loopIndex = (loopIndex + 1U) % (sizeof(backgroundLoop) / sizeof(backgroundLoop[0]));
 }
 
-static void BuzzerMusic_LoadAccentStep(void)
+static void BuzzerMusic_LoadEffectStep(void)
 {
-  const BuzzerStep* step = &scoreAccent[accentIndex];
+  const BuzzerStep* step = &currentEffect[effectIndex];
   BuzzerMusic_ApplyTone(step->frequency);
-  accentTicksRemaining = step->ticks;
-  accentIndex++;
-  if (accentIndex >= (sizeof(scoreAccent) / sizeof(scoreAccent[0])))
+  effectTicksRemaining = step->ticks;
+  effectIndex++;
+  if (effectIndex >= currentEffectLength)
   {
-    accentPlaying = 0U;
-    accentIndex = 0U;
-    accentTicksRemaining = 0U;
+    effectPlaying = 0U;
+    currentEffect = NULL;
+    currentEffectLength = 0U;
+    effectIndex = 0U;
+    effectTicksRemaining = 0U;
   }
+}
+
+static void BuzzerMusic_PlayEffect(const BuzzerStep* effect, size_t effectLength, uint8_t guardTicks)
+{
+  if ((effect == NULL) || (effectLength == 0U) || effectPlaying || (effectGuardTicks > 0U))
+  {
+    return;
+  }
+
+  BuzzerMusic_Init();
+  effectPlaying = 1U;
+  currentEffect = effect;
+  currentEffectLength = effectLength;
+  effectIndex = 0U;
+  effectTicksRemaining = 0U;
+  effectGuardTicks = guardTicks;
 }
 
 static LCD_DrvTypeDef* LcdDrv;
@@ -253,110 +320,126 @@ uint32_t Spi5Timeout = SPI5_TIMEOUT_MAX; /*<! Value of Timeout when SPI communic
 void BuzzerMusic_Init(void)
 {
   GPIO_InitTypeDef gpioInitStruct = {0};
-  TIM_OC_InitTypeDef configOC = {0};
 
   if (buzzerInitialized)
   {
     return;
   }
 
-  __HAL_RCC_GPIOD_CLK_ENABLE();
-  __HAL_RCC_TIM4_CLK_ENABLE();
+  __HAL_RCC_GPIOG_CLK_ENABLE();
+  __HAL_RCC_TIM7_CLK_ENABLE();
 
-  gpioInitStruct.Pin = GPIO_PIN_12;
-  gpioInitStruct.Mode = GPIO_MODE_AF_PP;
+  /* PG13 stays a plain GPIO output for its whole life: it is never switched
+     to an alternate function, so neither FMC (SDRAM) nor LTDC can ever
+     drive or toggle it in the background. */
+  gpioInitStruct.Pin = BUZZER_GPIO_PIN;
+  gpioInitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   gpioInitStruct.Pull = GPIO_NOPULL;
   gpioInitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  gpioInitStruct.Alternate = GPIO_AF2_TIM4;
-  HAL_GPIO_Init(GPIOD, &gpioInitStruct);
+  HAL_GPIO_Init(BUZZER_GPIO_PORT, &gpioInitStruct);
+  BuzzerMusic_SetPinIdle();
 
-  htim4.Instance = TIM4;
-  htim4.Init.Prescaler = 90U - 1U;
-  htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim4.Init.Period = 1000U - 1U;
-  htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-  if (HAL_TIM_PWM_Init(&htim4) != HAL_OK)
+  htim7.Instance = TIM7;
+  htim7.Init.Prescaler = 90U - 1U;
+  htim7.Init.CounterMode = TIM_COUNTERMODE_UP;
+  htim7.Init.Period = 1000U - 1U;
+  htim7.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
+  htim7.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
+  if (HAL_TIM_Base_Init(&htim7) != HAL_OK)
   {
     Error_Handler();
   }
 
-  configOC.OCMode = TIM_OCMODE_PWM1;
-  configOC.Pulse = 0U;
-  configOC.OCPolarity = TIM_OCPOLARITY_HIGH;
-  configOC.OCFastMode = TIM_OCFAST_DISABLE;
-  if (HAL_TIM_PWM_ConfigChannel(&htim4, &configOC, BUZZER_TIM_CHANNEL) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  if (HAL_TIM_PWM_Start(&htim4, BUZZER_TIM_CHANNEL) != HAL_OK)
-  {
-    Error_Handler();
-  }
+  HAL_NVIC_SetPriority(TIM7_IRQn, 6, 0U);
+  HAL_NVIC_EnableIRQ(TIM7_IRQn);
 
   buzzerInitialized = 1U;
+  buzzerToneActive = 0U;
   BuzzerMusic_ApplyTone(0U);
 }
 
 void BuzzerMusic_StartGameLoop(void)
 {
   BuzzerMusic_Init();
-
+  effectPlaying = 0U;
+  currentEffect = NULL;
+  currentEffectLength = 0U;
+  effectIndex = 0U;
+  effectTicksRemaining = 0U;
+  effectGuardTicks = 0U;
+  buzzerToneActive = 0U;
   loopPlaying = 1U;
-  accentPlaying = 0U;
   loopIndex = 0U;
   loopTicksRemaining = 0U;
-  accentIndex = 0U;
-  accentTicksRemaining = 0U;
   BuzzerMusic_LoadLoopStep();
 }
 
 void BuzzerMusic_Stop(void)
 {
+  effectPlaying = 0U;
+  currentEffect = NULL;
+  currentEffectLength = 0U;
+  effectTicksRemaining = 0U;
+  effectGuardTicks = 0U;
   loopPlaying = 0U;
-  accentPlaying = 0U;
   loopTicksRemaining = 0U;
-  accentTicksRemaining = 0U;
+  buzzerToneActive = 0U;
   BuzzerMusic_ApplyTone(0U);
 }
 
 void BuzzerMusic_Update(void)
 {
-  if (!loopPlaying && !accentPlaying)
+  if (effectGuardTicks > 0U)
+  {
+    effectGuardTicks--;
+  }
+
+  if (!effectPlaying && !loopPlaying)
   {
     return;
   }
 
-  if (accentPlaying)
+  if (effectPlaying)
   {
-    if (accentTicksRemaining == 0U)
+    if (effectTicksRemaining == 0U)
     {
-      BuzzerMusic_LoadAccentStep();
-      if (!accentPlaying)
+      BuzzerMusic_LoadEffectStep();
+      if (!effectPlaying)
       {
         BuzzerMusic_ApplyTone(0U);
+        /* Force the background loop to advance to its next note on the
+           next tick instead of trying to resume mid-note. */
         loopTicksRemaining = 0U;
         return;
       }
     }
-    accentTicksRemaining--;
+    effectTicksRemaining--;
     return;
   }
 
-  if (loopTicksRemaining == 0U)
+  if (loopPlaying)
   {
-    BuzzerMusic_LoadLoopStep();
+    if (loopTicksRemaining == 0U)
+    {
+      BuzzerMusic_LoadLoopStep();
+    }
+    loopTicksRemaining--;
   }
-  loopTicksRemaining--;
 }
 
 void BuzzerMusic_Accent(void)
 {
-  BuzzerMusic_Init();
-  accentPlaying = 1U;
-  accentIndex = 0U;
-  accentTicksRemaining = 0U;
+  BuzzerMusic_PlayEffect(scoreAccent, sizeof(scoreAccent) / sizeof(scoreAccent[0]), 2U);
+}
+
+void BuzzerMusic_PaddleBounce(void)
+{
+  BuzzerMusic_PlayEffect(paddleBounceEffect, sizeof(paddleBounceEffect) / sizeof(paddleBounceEffect[0]), 3U);
+}
+
+void BuzzerMusic_WallBounce(void)
+{
+  BuzzerMusic_PlayEffect(wallBounceEffect, sizeof(wallBounceEffect) / sizeof(wallBounceEffect[0]), 3U);
 }
 /* USER CODE END 0 */
 
@@ -393,6 +476,11 @@ int main(void)
   MX_I2C3_Init();
   MX_SPI5_Init();
   MX_FMC_Init();
+  /* Reclaim the buzzer pin from the FMC alternate function and force it
+     silent immediately at boot, before any screen is shown. Without this,
+     the SDRAM/FMC controller keeps toggling this pin (needed for the LCD
+     framebuffer) and the piezo buzzer picks that up as a constant tone. */
+  BuzzerMusic_Init();
   MX_LTDC_Init();
   MX_DMA2D_Init();
   MX_TouchGFX_Init();
@@ -1255,6 +1343,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   /* USER CODE END Callback 0 */
   if (htim->Instance == TIM6) {
     HAL_IncTick();
+  } else if (htim->Instance == TIM7) {
+    HAL_GPIO_TogglePin(BUZZER_GPIO_PORT, BUZZER_GPIO_PIN);
   }
   /* USER CODE BEGIN Callback 1 */
 

@@ -352,9 +352,11 @@ void HardScreenView::handleTickEvent()
             if (ballY < 0) {
                 ballY = 0;
                 ballVelY = -ballVelY;
+                BuzzerMusic_WallBounce();
             } else if (ballY + ball.getHeight() > 240) {
                 ballY = 240 - ball.getHeight();
                 ballVelY = -ballVelY;
+                BuzzerMusic_WallBounce();
             }
 
             // Xử lý va chạm với paddle1 (bên trái)
@@ -363,6 +365,7 @@ void HardScreenView::handleTickEvent()
                 ballY + ball.getHeight() >= paddle1.getY() &&
                 ballY <= paddle1.getY() + paddle1.getHeight()) {
                 applyPaddleBounce(ballX, ballY, ballVelX, ballVelY, ball.getWidth(), ball.getHeight(), paddle1, true);
+                BuzzerMusic_PaddleBounce();
             }
 
             // Xử lý va chạm với paddle2 (bên phải)
@@ -371,6 +374,7 @@ void HardScreenView::handleTickEvent()
                 ballY + ball.getHeight() >= paddle2.getY() &&
                 ballY <= paddle2.getY() + paddle2.getHeight()) {
                 applyPaddleBounce(ballX, ballY, ballVelX, ballVelY, ball.getWidth(), ball.getHeight(), paddle2, false);
+                BuzzerMusic_PaddleBounce();
             }
 
             // Xử lý va chạm với các image
@@ -487,6 +491,7 @@ void HardScreenView::handleTickEvent()
                         // Bóng ngoài vùng goal, phản xạ
                         ballX = 319;
                         ballVelX = -ballVelX;
+                        BuzzerMusic_WallBounce();
                     }
                 }
 
@@ -520,6 +525,7 @@ void HardScreenView::handleTickEvent()
                         // Bóng ngoài vùng goal, phản xạ
                         ballX = 1;
                         ballVelX = -ballVelX;
+                        BuzzerMusic_WallBounce();
                     }
                 }
 
