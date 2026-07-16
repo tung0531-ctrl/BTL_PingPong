@@ -516,3 +516,38 @@ sequenceDiagram
 
 *Tài liệu biên soạn trực tiếp từ code thật trong repo tại thời điểm hiện tại (không dựa trên `.ioc` vì các
 khối joystick/buzzer/UART không được khai báo trong đó — xem thêm `KiemTraPhanCung.md`).*
+
+*/
+Tóm tắt ngắn gọn 
+
+Dự án này là code thật của game Ping-Pong chạy trên board STM32F429I, và tài liệu mô tả rất chi tiết ở mức thanh ghi. Mình tóm lại theo 3 khối chức năng chính, bỏ bớt phần code/thanh ghi, giữ lại ý chính:
+Tổng quan: Chương trình chạy 3 luồng song song (FreeRTOS), phối hợp nhau nhờ 3 ngắt phần cứng "nhịp tim":
+
+1 luồng chuyên đọc joystick
+1 luồng vẽ hình + xử lý toàn bộ logic game (bóng, va chạm, điểm số)
+1 luồng mặc định không làm gì (do công cụ sinh code tự tạo)
+
+
+1. Điều khiển bằng Joystick
+
+Cứ mỗi 10ms, hệ thống đọc 4 trục joystick (2 người chơi × trục X/Y) qua ADC.
+So giá trị đọc được với ngưỡng để biết người chơi đang đẩy joystick sang trái/phải/lên/xuống hay đang ở giữa (không làm gì).
+Nếu có thay đổi hướng (hoặc giữ nguyên hướng quá 40ms), gửi 1 "lệnh" vào hàng đợi — cách này vừa giúp paddle di chuyển mượt khi giữ joystick, vừa tránh gửi lệnh dồn dập làm nghẽn hệ thống.
+Bên xử lý game (chạy 60 lần/giây) sẽ lấy hết lệnh đang chờ mỗi khung hình để: di chuyển vợt, chỉnh góc ngắm khi chuẩn bị giao bóng, hoặc giao bóng khi bấm nút.
+
+2. Hiển thị màn hình (TouchGFX)
+
+Hình ảnh được vẽ vào bộ nhớ RAM (SDRAM), sau đó phần cứng màn hình (LTDC) tự động đọc và xuất ra màn hình liên tục.
+Cứ mỗi lần màn hình "quét xong 1 khung" (khoảng 60 lần/giây), hệ thống được đánh thức để: xử lý lệnh joystick, tính toán vật lý bóng (di chuyển, va chạm tường/vợt, tính điểm), phát âm thanh tương ứng, rồi vẽ lại các phần thay đổi.
+Việc vẽ hình được một bộ tăng tốc phần cứng (DMA2D) đảm nhận, giúp CPU không phải tốn công vẽ từng điểm ảnh.
+Có 2 màn hình chơi (mức Dễ và Trung bình), dùng chung gần như toàn bộ logic bóng/vợt/điểm số.
+
+3. Âm thanh (Buzzer/Loa)
+
+Không dùng tính năng phát âm thanh có sẵn của timer, mà tự "đánh nhịp" bằng cách bật/tắt liên tục 1 chân GPIO ở đúng tần số mong muốn — để tránh xung đột chân với phần nhớ hình ảnh.
+Có nhạc nền phát lặp xuyên suốt ván đấu, và các tiếng "bíp" ngắn khi: bóng chạm vợt, bóng chạm tường, hoặc có người ghi điểm.
+Khi có hiệu ứng (va chạm/ghi điểm) thì hiệu ứng đó luôn được ưu tiên phát ngay, tạm ngắt nhạc nền, tránh 2 âm thanh chồng lên nhau.
+
+
+Tóm gọn 1 khung hình (~1/60 giây): Màn hình báo "đã quét xong" → hệ thống xử lý lệnh joystick → tính toán vật lý bóng + điểm số → phát âm thanh phù hợp → vẽ lại phần thay đổi lên màn hình. Tất cả diễn ra gần như đồng thời nên người chơi thấy hình và nghe tiếng phản hồi ngay lập tức khi có va chạm.
+*/
