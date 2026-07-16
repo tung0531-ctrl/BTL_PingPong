@@ -334,7 +334,7 @@ void EasyScreenView::handleTickEvent()
             EasyScreenViewBase::score2.invalidate();
             BuzzerMusic_Accent();
 
-            if (score2 >= 11) {
+            if (score2 >= 5) {
                 gameOver = true;
                 presenter->goToEndScreen(2);
             }
@@ -356,7 +356,7 @@ void EasyScreenView::handleTickEvent()
             EasyScreenViewBase::score1.invalidate();
             BuzzerMusic_Accent();
 
-            if (score1 >= 11) {
+            if (score1 >= 5) {
                 gameOver = true;
                 presenter->goToEndScreen(1);
             }

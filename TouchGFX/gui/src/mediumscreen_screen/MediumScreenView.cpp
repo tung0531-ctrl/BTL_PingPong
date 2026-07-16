@@ -366,7 +366,7 @@ void MediumScreenView::handleTickEvent()
                         Unicode::snprintf(MediumScreenViewBase::score1Buffer, MediumScreenViewBase::SCORE1_SIZE, "%d", score1);
                         MediumScreenViewBase::score1.invalidate();
                         BuzzerMusic_Accent();
-                        if (score1 >= 11) {
+                        if (score1 >= 5) {
                             gameOver = true;
                             presenter->goToEndScreen(1);
                         }
@@ -400,7 +400,7 @@ void MediumScreenView::handleTickEvent()
                         Unicode::snprintf(MediumScreenViewBase::score2Buffer, MediumScreenViewBase::SCORE2_SIZE, "%d", score2);
                         MediumScreenViewBase::score2.invalidate();
                         BuzzerMusic_Accent();
-                        if (score2 >= 11) {
+                        if (score2 >= 5) {
                             gameOver = true;
                             presenter->goToEndScreen(2);
                         }

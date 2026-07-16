@@ -17875,9 +17875,9 @@ void EasyScreenView::handleTickEvent()
             BuzzerMusic_Accent();
  80081c0:	f7fa f998 	bl	80024f4 <BuzzerMusic_Accent>
 
-            if (score2 >= 11) {
+            if (score2 >= 5) {
  80081c4:	f8d5 36dc 	ldr.w	r3, [r5, #1756]	@ 0x6dc
- 80081c8:	2b0a      	cmp	r3, #10
+ 80081c8:	2b04      	cmp	r3, #4
  80081ca:	dd06      	ble.n	80081da <_ZN14EasyScreenView15handleTickEventEv+0x23a>
                 gameOver = true;
  80081cc:	2301      	movs	r3, #1
@@ -18479,9 +18479,9 @@ void EasyScreenView::handleTickEvent()
  80087ba:	f010 fb73 	bl	8018ea4 <_ZNK8touchgfx8Drawable10invalidateEv>
             BuzzerMusic_Accent();
  80087be:	f7f9 fe99 	bl	80024f4 <BuzzerMusic_Accent>
-            if (score1 >= 11) {
+            if (score1 >= 5) {
  80087c2:	f8d5 36d8 	ldr.w	r3, [r5, #1752]	@ 0x6d8
- 80087c6:	2b0a      	cmp	r3, #10
+ 80087c6:	2b04      	cmp	r3, #4
  80087c8:	dd05      	ble.n	80087d6 <_ZN14EasyScreenView15handleTickEventEv+0x836>
                 gameOver = true;
  80087ca:	2101      	movs	r1, #1
@@ -20540,9 +20540,9 @@ void HardScreenView::handleTickEvent()
  80097ba:	f00f fb73 	bl	8018ea4 <_ZNK8touchgfx8Drawable10invalidateEv>
                            BuzzerMusic_Accent();
  80097be:	f7f8 fe99 	bl	80024f4 <BuzzerMusic_Accent>
-                           if (score2 >= 11) {
+                           if (score2 >= 5) {
  80097c2:	f8d5 37f4 	ldr.w	r3, [r5, #2036]	@ 0x7f4
- 80097c6:	2b0a      	cmp	r3, #10
+ 80097c6:	2b04      	cmp	r3, #4
  80097c8:	dd06      	ble.n	80097d8 <_ZN14HardScreenView15handleTickEventEv+0x488>
                                gameOver = true;
  80097ca:	2301      	movs	r3, #1
@@ -20911,9 +20911,9 @@ void HardScreenView::handleTickEvent()
  8009b60:	f00f f9a0 	bl	8018ea4 <_ZNK8touchgfx8Drawable10invalidateEv>
                            BuzzerMusic_Accent();
  8009b64:	f7f8 fcc6 	bl	80024f4 <BuzzerMusic_Accent>
-                           if (score1 >= 11) {
+                           if (score1 >= 5) {
  8009b68:	f8d5 37f0 	ldr.w	r3, [r5, #2032]	@ 0x7f0
- 8009b6c:	2b0a      	cmp	r3, #10
+ 8009b6c:	2b04      	cmp	r3, #4
  8009b6e:	dd05      	ble.n	8009b7c <_ZN14HardScreenView15handleTickEventEv+0x82c>
                                gameOver = true;
  8009b70:	2101      	movs	r1, #1
@@ -21049,9 +21049,9 @@ void HardScreenView::handleTickEvent()
  8009c98:	f00f f904 	bl	8018ea4 <_ZNK8touchgfx8Drawable10invalidateEv>
                         BuzzerMusic_Accent();
  8009c9c:	f7f8 fc2a 	bl	80024f4 <BuzzerMusic_Accent>
-                        if (score1 >= 11) {
+                        if (score1 >= 5) {
  8009ca0:	f8d5 37f0 	ldr.w	r3, [r5, #2032]	@ 0x7f0
- 8009ca4:	2b0a      	cmp	r3, #10
+ 8009ca4:	2b04      	cmp	r3, #4
  8009ca6:	dd05      	ble.n	8009cb4 <_ZN14HardScreenView15handleTickEventEv+0x964>
                             gameOver = true;
  8009ca8:	2101      	movs	r1, #1
@@ -21179,9 +21179,9 @@ void HardScreenView::handleTickEvent()
  8009dd0:	f00f f868 	bl	8018ea4 <_ZNK8touchgfx8Drawable10invalidateEv>
                         BuzzerMusic_Accent();
  8009dd4:	f7f8 fb8e 	bl	80024f4 <BuzzerMusic_Accent>
-                        if (score2 >= 11) {
+                        if (score2 >= 5) {
  8009dd8:	f8d5 37f4 	ldr.w	r3, [r5, #2036]	@ 0x7f4
- 8009ddc:	2b0a      	cmp	r3, #10
+ 8009ddc:	2b04      	cmp	r3, #4
  8009dde:	dd06      	ble.n	8009dee <_ZN14HardScreenView15handleTickEventEv+0xa9e>
                             gameOver = true;
  8009de0:	2301      	movs	r3, #1
@@ -22651,9 +22651,9 @@ void MediumScreenView::handleTickEvent()
  800a976:	f00e fa95 	bl	8018ea4 <_ZNK8touchgfx8Drawable10invalidateEv>
                         BuzzerMusic_Accent();
  800a97a:	f7f7 fdbb 	bl	80024f4 <BuzzerMusic_Accent>
-                        if (score1 >= 11) {
+                        if (score1 >= 5) {
  800a97e:	f8d4 3740 	ldr.w	r3, [r4, #1856]	@ 0x740
- 800a982:	2b0a      	cmp	r3, #10
+ 800a982:	2b04      	cmp	r3, #4
  800a984:	dd05      	ble.n	800a992 <_ZN16MediumScreenView15handleTickEventEv+0x272>
                             gameOver = true;
  800a986:	2101      	movs	r1, #1
@@ -23117,9 +23117,9 @@ void MediumScreenView::handleTickEvent()
  800adec:	f00e f85a 	bl	8018ea4 <_ZNK8touchgfx8Drawable10invalidateEv>
                         BuzzerMusic_Accent();
  800adf0:	f7f7 fb80 	bl	80024f4 <BuzzerMusic_Accent>
-                        if (score2 >= 11) {
+                        if (score2 >= 5) {
  800adf4:	f8d4 3744 	ldr.w	r3, [r4, #1860]	@ 0x744
- 800adf8:	2b0a      	cmp	r3, #10
+ 800adf8:	2b04      	cmp	r3, #4
  800adfa:	dd06      	ble.n	800ae0a <_ZN16MediumScreenView15handleTickEventEv+0x6ea>
                             gameOver = true;
  800adfc:	2301      	movs	r3, #1

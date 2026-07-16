@@ -420,7 +420,7 @@ void HardScreenView::handleTickEvent()
                            Unicode::snprintf(HardScreenViewBase::score2Buffer, HardScreenViewBase::SCORE2_SIZE, "%d", score2);
                            HardScreenViewBase::score2.invalidate();
                            BuzzerMusic_Accent();
-                           if (score2 >= 11) {
+                           if (score2 >= 5) {
                                gameOver = true;
                                presenter->goToEndScreen(2);
                            }
@@ -429,7 +429,7 @@ void HardScreenView::handleTickEvent()
                            Unicode::snprintf(HardScreenViewBase::score1Buffer, HardScreenViewBase::SCORE1_SIZE, "%d", score1);
                            HardScreenViewBase::score1.invalidate();
                            BuzzerMusic_Accent();
-                           if (score1 >= 11) {
+                           if (score1 >= 5) {
                                gameOver = true;
                                presenter->goToEndScreen(1);
                            }
@@ -469,7 +469,7 @@ void HardScreenView::handleTickEvent()
                         HardScreenViewBase::score1.invalidate();
 
                         BuzzerMusic_Accent();
-                        if (score1 >= 11) {
+                        if (score1 >= 5) {
                             gameOver = true;
                             presenter->goToEndScreen(1);
                         }
@@ -503,7 +503,7 @@ void HardScreenView::handleTickEvent()
                         Unicode::snprintf(HardScreenViewBase::score2Buffer, HardScreenViewBase::SCORE2_SIZE, "%d", score2);
                         HardScreenViewBase::score2.invalidate();
                         BuzzerMusic_Accent();
-                        if (score2 >= 11) {
+                        if (score2 >= 5) {
                             gameOver = true;
                             presenter->goToEndScreen(2);
                         }
