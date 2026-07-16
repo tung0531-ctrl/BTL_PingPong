@@ -162,7 +162,6 @@ void HardScreenView::showAimLineForPlayer(int player)
 void HardScreenView::setupScreen()
 {
     HardScreenViewBase::setupScreen();
-    BuzzerMusic_StartGameLoop();
     score1 = 0;
 	score2 = 0;
 	gameOver = false;
@@ -196,7 +195,6 @@ void HardScreenView::setupScreen()
 
 void HardScreenView::tearDownScreen()
 {
-    BuzzerMusic_Stop();
     HardScreenViewBase::tearDownScreen();
 }
 
@@ -204,11 +202,9 @@ void HardScreenView::handleTickEvent()
 {
     invalidate();
     refreshStaticScene();
-    BuzzerMusic_Update();
 
 
     if (gameOver) {
-        BuzzerMusic_Stop();
         hideAimLines();
         return; // Không xử lý nếu trò chơi kết thúc
     }

@@ -383,8 +383,25 @@ void BuzzerMusic_Stop(void)
   effectGuardTicks = 0U;
   loopPlaying = 0U;
   loopTicksRemaining = 0U;
-  buzzerToneActive = 0U;
+  /* Let BuzzerMusic_ApplyTone() see the real buzzerToneActive state so it
+     actually calls HAL_TIM_Base_Stop_IT() when a tone is currently playing.
+     Clearing buzzerToneActive here first was causing ApplyTone(0) to skip
+     stopping TIM7, leaving it toggling PG13 forever at the last frequency. */
   BuzzerMusic_ApplyTone(0U);
+}
+
+/* Pause only the ambient background loop (used while a point is waiting to
+   be served), without cutting off a currently playing effect (score accent,
+   paddle/wall bounce). If no effect is playing right now, silence the tone
+   immediately so it doesn't keep sounding until the next loop step. */
+void BuzzerMusic_PauseLoop(void)
+{
+  loopPlaying = 0U;
+  loopTicksRemaining = 0U;
+  if (!effectPlaying)
+  {
+    BuzzerMusic_ApplyTone(0U);
+  }
 }
 
 void BuzzerMusic_Update(void)
@@ -481,6 +498,10 @@ int main(void)
      the SDRAM/FMC controller keeps toggling this pin (needed for the LCD
      framebuffer) and the piezo buzzer picks that up as a constant tone. */
   BuzzerMusic_Init();
+  /* Start the background loop right away so it plays continuously from
+     power-on: on the mode-select menu, during serve-wait, and even on the
+     end/victory screen. It is never stopped/paused anymore. */
+  BuzzerMusic_StartGameLoop();
   MX_LTDC_Init();
   MX_DMA2D_Init();
   MX_TouchGFX_Init();

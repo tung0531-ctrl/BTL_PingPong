@@ -1,6 +1,6 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
-D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenView.cpp:197:6:virtual void HardScreenView::tearDownScreen()	0	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenView.cpp:196:6:virtual void HardScreenView::tearDownScreen()	0	static
 ../../TouchGFX/gui/include/gui/hardscreen_screen/HardScreenView.hpp:11:13:HardScreenView::~HardScreenView()	8	static
 ../../TouchGFX/gui/include/gui/hardscreen_screen/HardScreenView.hpp:11:13:virtual HardScreenView::~HardScreenView()	8	static
 D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenView.cpp:24:6:void {anonymous}::applyPaddleBounce(float&, float&, float&, float&, int, int, const touchgfx::Box&, bool)	48	static
@@ -15,4 +15,4 @@ D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_scr
 D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenView.cpp:145:6:void HardScreenView::showAimLineForPlayer(int)	16	static
 D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenView.cpp:103:6:void HardScreenView::refreshStaticScene()	8	static
 D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenView.cpp:162:6:virtual void HardScreenView::setupScreen()	24	static
-D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenView.cpp:203:6:virtual void HardScreenView::handleTickEvent()	64	static
+D:/Document_from_C/2025_2/Henhung/BTL_me/HeNhung/TouchGFX/gui/src/hardscreen_screen/HardScreenView.cpp:201:6:virtual void HardScreenView::handleTickEvent()	64	static

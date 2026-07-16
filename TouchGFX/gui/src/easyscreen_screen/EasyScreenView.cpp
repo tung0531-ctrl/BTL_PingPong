@@ -100,7 +100,6 @@ void EasyScreenView::updateAimLine(touchgfx::Line& line, float centerX, float ce
 void EasyScreenView::setupScreen()
 {
     EasyScreenViewBase::setupScreen();
-    BuzzerMusic_StartGameLoop();
     score1 = 0;
     score2 = 0;
     gameOver = false;
@@ -139,7 +138,6 @@ void EasyScreenView::setupScreen()
 // Phương thức dọn dẹp khi thoát màn hình
 void EasyScreenView::tearDownScreen()
 {
-    BuzzerMusic_Stop();
     EasyScreenViewBase::tearDownScreen();
 }
 
@@ -147,10 +145,8 @@ void EasyScreenView::tearDownScreen()
 void EasyScreenView::handleTickEvent()
 {
     invalidate();
-    BuzzerMusic_Update();
 
     if (gameOver) {
-        BuzzerMusic_Stop();
         line1.setVisible(false);
         line1_1.setVisible(false);
         line1.invalidate();
