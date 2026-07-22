@@ -160,7 +160,7 @@ void EasyScreenView::handleTickEvent()
         switch (command) {
             case JOY1_LEFT:
             {
-                int16_t newY = paddle1.getY() + 2;
+                int16_t newY = paddle1.getY() + 5;
                 if (newY > 198) newY = 198;
                 if (newY != paddle1.getY()) {
                     paddle1.invalidate();
@@ -172,7 +172,7 @@ void EasyScreenView::handleTickEvent()
 
             case JOY1_RIGHT:
             {
-                int16_t newY = paddle1.getY() - 2;
+                int16_t newY = paddle1.getY() - 5;
                 if (newY < 2) newY = 2;
                 if (newY != paddle1.getY()) {
                     paddle1.invalidate();
@@ -184,7 +184,7 @@ void EasyScreenView::handleTickEvent()
 
             case JOY2_LEFT:
             {
-                int16_t newY = paddle2.getY() + 2;
+                int16_t newY = paddle2.getY() + 5;
                 if (newY > 198) newY = 198;
                 if (newY != paddle2.getY()) {
                     paddle2.invalidate();
@@ -196,7 +196,7 @@ void EasyScreenView::handleTickEvent()
 
             case JOY2_RIGHT:
             {
-                int16_t newY = paddle2.getY() - 2;
+                int16_t newY = paddle2.getY() - 5;
                 if (newY < 2) newY = 2;
                 if (newY != paddle2.getY()) {
                     paddle2.invalidate();

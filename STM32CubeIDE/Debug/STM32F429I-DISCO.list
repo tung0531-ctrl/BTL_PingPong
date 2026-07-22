@@ -17993,8 +17993,8 @@ void EasyScreenView::handleTickEvent()
  80082c4:	01a10136 	.word	0x01a10136
         return rect.y;
  80082c8:	f9b4 30f6 	ldrsh.w	r3, [r4, #246]	@ 0xf6
-                int16_t newY = paddle1.getY() + 2;
- 80082cc:	1c9e      	adds	r6, r3, #2
+                int16_t newY = paddle1.getY() + 5;
+ 80082cc:	1d5e      	adds	r6, r3, #5
                 if (newY > 198) newY = 198;
  80082ce:	b236      	sxth	r6, r6
  80082d0:	2ec6      	cmp	r6, #198	@ 0xc6
@@ -18024,8 +18024,8 @@ void EasyScreenView::handleTickEvent()
  8008308:	3e4ccccd 	.word	0x3e4ccccd
  800830c:	43340000 	.word	0x43340000
  8008310:	f9b4 30f6 	ldrsh.w	r3, [r4, #246]	@ 0xf6
-                int16_t newY = paddle1.getY() - 2;
- 8008314:	1e9e      	subs	r6, r3, #2
+                int16_t newY = paddle1.getY() - 5;
+ 8008314:	1f5e      	subs	r6, r3, #5
                 if (newY < 2) newY = 2;
  8008316:	b236      	sxth	r6, r6
  8008318:	2e02      	cmp	r6, #2
@@ -18033,8 +18033,8 @@ void EasyScreenView::handleTickEvent()
  800831c:	2602      	movlt	r6, #2
  800831e:	e7da      	b.n	80082d6 <_ZN14EasyScreenView15handleTickEventEv+0x37e>
  8008320:	f9b4 3122 	ldrsh.w	r3, [r4, #290]	@ 0x122
-                int16_t newY = paddle2.getY() + 2;
- 8008324:	1c9e      	adds	r6, r3, #2
+                int16_t newY = paddle2.getY() + 5;
+ 8008324:	1d5e      	adds	r6, r3, #5
                 if (newY > 198) newY = 198;
  8008326:	b236      	sxth	r6, r6
  8008328:	2ec6      	cmp	r6, #198	@ 0xc6
@@ -18052,8 +18052,8 @@ void EasyScreenView::handleTickEvent()
  8008342:	4632      	mov	r2, r6
  8008344:	e7d2      	b.n	80082ec <_ZN14EasyScreenView15handleTickEventEv+0x394>
  8008346:	f9b4 3122 	ldrsh.w	r3, [r4, #290]	@ 0x122
-                int16_t newY = paddle2.getY() - 2;
- 800834a:	1e9e      	subs	r6, r3, #2
+                int16_t newY = paddle2.getY() - 5;
+ 800834a:	1f5e      	subs	r6, r3, #5
                 if (newY < 2) newY = 2;
  800834c:	b236      	sxth	r6, r6
  800834e:	2e02      	cmp	r6, #2
